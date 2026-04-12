@@ -29,33 +29,36 @@ body {
   color: gold;
 }
 
-.subtitle {
-  margin: 20px 0;
-  line-height: 1.6;
+.subtitle, .welcome-text, .location-text {
+  text-align: center;
+  line-height: 1.8;
 }
 
+/* BUTTON */
 .enter-btn {
   padding: 15px 30px;
   background: linear-gradient(45deg, gold, orange);
-  border: none;
   border-radius: 30px;
-  font-size: 1.1rem;
-  cursor: pointer;
+  border: none;
 }
 
 /* MAIN */
 #mainContent { display: none; }
 
 /* BACKGROUNDS */
-.page:nth-of-type(1) { background: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80"); }
-.page:nth-of-type(2) { background: url("https://images.unsplash.com/photo-1623609163859-ca93c959b9cf?auto=format&fit=crop&w=1400&q=80"); }
-.page:nth-of-type(3) { background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1400&q=80"); }
-.page:nth-of-type(4) { background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=1400&q=80"); }
+.page:nth-of-type(1) { background: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed"); }
+.page:nth-of-type(2) { background: url("https://images.unsplash.com/photo-1623609163859-ca93c959b9cf"); }
+.page:nth-of-type(4) { background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e"); }
+.page:nth-of-type(6) { background: url("https://images.unsplash.com/photo-1502685104226-ee32379fefbe"); }
 
-/* ✅ FIXED RSVP IMAGE */
+/* LOCATION */
+.location-page {
+  background: url("./location.png") center/cover no-repeat;
+}
+
+/* RSVP */
 .rsvp-page {
-  background: url("./invite.png") no-repeat center center;
-  background-size: cover;
+  background: url("./invite.png") center/cover no-repeat;
 }
 
 /* PAGE */
@@ -65,7 +68,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .page.active { display: flex; }
 
 /* CARD */
@@ -94,18 +96,34 @@ body {
   color: gold;
 }
 
-/* BUTTON */
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  background: gold;
-  border: none;
-  border-radius: 20px;
-}
-
 /* INPUT */
 input, select {
   display: block;
   margin: 10px auto;
   padding: 8px;
+}
+
+/* PETALS */
+.petals span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: pink;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}
+
+/* HEARTS */
+.hearts span {
+  position: absolute;
+  color: hotpink;
+  animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
 }
