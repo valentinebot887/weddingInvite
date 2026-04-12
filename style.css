@@ -35,7 +35,6 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-size: cover;
 }
 .page.active {
   display: flex;
@@ -49,30 +48,22 @@ body {
   text-align: center;
 }
 
-.big-card {
-  max-width: 800px;
-}
-
 /* EVENTS */
 .events {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
-}
-.event {
-  width: 200px;
 }
 .event img {
-  width: 100%;
-  height: 130px;
+  width: 150px;
+  height: 120px;
   object-fit: cover;
 }
 
 /* TIMER */
 .top-timer {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   background: black;
   padding: 5px 10px;
   border-radius: 10px;
@@ -81,8 +72,8 @@ body {
 
 /* BUTTON */
 button {
-  margin: 10px;
-  padding: 10px 20px;
+  padding: 10px;
+  margin: 5px;
   background: gold;
   border: none;
   border-radius: 20px;
