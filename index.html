@@ -15,95 +15,72 @@
 
 <!-- INTRO -->
 <div id="intro">
-  <h1 class="fade">Sameekshya ❤️ Ankur</h1>
-  <p class="fade delay">Are Getting Married</p>
-  <button onclick="enterSite()">Enter Invitation</button>
+  <div class="intro-content">
+    <h1>Sameekshya ❤️ Ankur</h1>
+    <p>Are Getting Married</p>
+    <button onclick="enterSite()">Enter Invitation</button>
+  </div>
 </div>
 
 <!-- MAIN -->
 <div id="mainContent">
 
-<!-- Page 1 -->
 <section class="page active">
   <div class="card">
     <h1>Welcome 💌</h1>
-    <p>Click below to begin</p>
     <button onclick="nextPage()">Continue</button>
   </div>
 </section>
 
-<!-- Page 2 -->
 <section class="page">
   <div class="card">
     <h1>Wedding Dates</h1>
-
-    <p>🌼 Haldi: 4 Dec 2026</p>
-    <p>💃 Mehendi & Sangeet: 5 Dec 2026</p>
-    <p>💍 Wedding: 6 Dec 2026</p>
-
+    <p>Haldi: 4 Dec</p>
+    <p>Mehendi: 5 Dec</p>
+    <p>Wedding: 6 Dec</p>
     <h2 id="countdown"></h2>
 
-    <button onclick="nextPage()">Continue</button>
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="nextPage()">Next ➡</button>
   </div>
 </section>
 
-<!-- Page 3 -->
 <section class="page">
   <div class="card">
-    <h1>You're Invited 👑</h1>
-
-    <h2>Bhubaneshwar</h2>
+    <h1>Location 📍</h1>
 
     <a href="https://www.google.com/maps/search/?api=1&query=Bhubaneswar" target="_blank">
-      <button>📍 View Location</button>
+      <button>Open Map</button>
     </a>
 
-    <h3>Groom's Family</h3>
-    <p>Anant Kumar & Anju Kumari</p>
-    <p>Ayush Kumar</p>
-
-    <h3>Bride's Family</h3>
-    <p>Somendra Das & Aliva Das</p>
-    <p>Swapnika Das Babar</p>
-    <p>Kuchuuu</p>
-
-    <button onclick="nextPage()">RSVP</button>
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="nextPage()">Next ➡</button>
   </div>
 </section>
 
-<!-- RSVP -->
 <section class="page">
   <div class="card">
     <h1>RSVP 💌</h1>
 
     <form action="https://formspree.io/f/mayvlqzv" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="number" name="guests" placeholder="Number of Guests" required>
-
-      <select name="attendance">
-        <option>Will Attend</option>
-        <option>Will Not Attend</option>
-      </select>
-
       <button type="submit">Submit</button>
     </form>
 
-    <button onclick="nextPage()">Guest Dashboard</button>
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="nextPage()">Guest List ➡</button>
   </div>
 </section>
 
-<!-- Guest Tracker -->
 <section class="page">
   <div class="card">
     <h1>Guest Confirmation 👥</h1>
 
-    <h3>Friends</h3>
     <div id="friendsList"></div>
-
-    <h3>Family</h3>
     <div id="familyList"></div>
 
-    <button onclick="saveGuests()">💾 Save</button>
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="saveGuests()">Save</button>
   </div>
 </section>
 
