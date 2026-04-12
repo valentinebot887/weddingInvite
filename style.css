@@ -6,9 +6,42 @@
 }
 
 body {
-  overflow: hidden;
-  background: linear-gradient(135deg, #1a1a2e, #3a0ca3);
+  background: #0d0d0d;
   color: white;
+  overflow: hidden;
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+.delay {
+  animation-delay: 1s;
+}
+
+#intro button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: gold;
+  border: none;
+}
+
+/* MAIN */
+#mainContent {
+  display: none;
 }
 
 .page {
@@ -18,89 +51,68 @@ body {
   display: none;
   justify-content: center;
   align-items: center;
-  transition: 1s;
 }
 
 .page.active {
   display: flex;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 1s;
 }
 
+/* CARD */
 .card {
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,215,0,0.08);
+  border: 1px solid gold;
   padding: 40px;
   border-radius: 20px;
   text-align: center;
   width: 85%;
   max-width: 400px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-
-h2 {
-  margin-top: 20px;
-  color: #ffd700;
+  color: gold;
 }
 
 h3 {
   margin-top: 15px;
+  color: #ffd700;
 }
 
-.subtitle {
-  margin-bottom: 20px;
-  opacity: 0.8;
-}
-
-button {
-  margin-top: 25px;
-  padding: 12px 25px;
+/* FORM */
+input, select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 10px;
   border: none;
+}
+
+/* BUTTON */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
   border-radius: 25px;
-  background: linear-gradient(45deg, #ff4d6d, #ff758c);
-  color: white;
+  background: gold;
+  color: black;
+  border: none;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
   transform: scale(1.1);
 }
 
-/* Animation */
+/* LIST */
+label {
+  display: block;
+  text-align: left;
+  margin: 6px 0;
+}
+
+/* ANIMATION */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-/* Floating hearts */
-.hearts::before {
-  content: "💖 💕 💗 💓 💞";
-  position: absolute;
-  width: 100%;
-  animation: float 10s linear infinite;
-  font-size: 2rem;
-  text-align: center;
-}
-
-@keyframes float {
-  0% { transform: translateY(100vh); }
-  100% { transform: translateY(-10vh); }
-}
-
-/* Music button */
-.music-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: gold;
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
