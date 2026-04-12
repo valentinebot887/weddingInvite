@@ -1,13 +1,11 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
-// Enter animation
 function enterSite() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
 }
 
-// Page navigation
 function nextPage() {
   pages[currentPage].classList.remove("active");
   currentPage++;
@@ -26,7 +24,7 @@ setInterval(() => {
     "⏳ " + days + " Days Remaining";
 }, 1000);
 
-// Guest Lists
+// Guests
 const friends = [
   "Shruti Chirag","Shaiviiiii Apoorva Sakshi","Parul Vanya Hunar",
   "Gauri plus pati","Mehak Siddhika Sur","Rohan Dwij Utsav",
@@ -45,7 +43,6 @@ const family = [
   "Kalyan uncle","Jayant uncle","Sunil uncle","Jyoti aunty"
 ];
 
-// Render
 function renderGuests() {
   const fDiv = document.getElementById("friendsList");
   const famDiv = document.getElementById("familyList");
@@ -74,10 +71,8 @@ function renderGuests() {
   });
 }
 
-// Save
 function saveGuests() {
   alert("Saved Successfully ✅");
 }
 
-// Load
 window.onload = renderGuests;
