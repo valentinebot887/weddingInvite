@@ -1,13 +1,11 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-
-  /* 🔥 NEW LUXURY BACKGROUND */
   background: radial-gradient(circle at center, #1a0033, #000000);
   color: white;
 }
 
-/* CENTER FIX */
+/* INTRO */
 #intro {
   height: 100vh;
   display: flex;
@@ -19,23 +17,26 @@ body {
   text-align: center;
 }
 
-/* NAME FIX */
 .center-box h1 {
   font-size: 3rem;
   color: gold;
 }
 
+.center-box p {
+  color: #ddd;
+}
+
 /* BUTTON */
 button {
   padding: 12px 25px;
-  border: none;
   border-radius: 25px;
+  border: none;
   background: linear-gradient(45deg, gold, orange);
   cursor: pointer;
   margin: 10px;
 }
 
-/* PAGES */
+/* MAIN */
 #mainContent {
   display: none;
 }
@@ -67,4 +68,10 @@ input, select {
   padding: 10px;
   border-radius: 10px;
   border: none;
+}
+
+/* ADMIN */
+#adminLogin input {
+  padding: 10px;
+  border-radius: 10px;
 }
