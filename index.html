@@ -26,6 +26,7 @@
 <!-- MAIN -->
 <div id="mainContent">
 
+<!-- PAGE 1 -->
 <section class="page active">
   <div class="card">
     <h1>Welcome 💌</h1>
@@ -33,10 +34,17 @@
   </div>
 </section>
 
-<!-- EVENTS PAGE -->
+<!-- PAGE 2 (DATES + TIMER) -->
 <section class="page">
-  <div class="card big-card">
 
+  <div class="top-timer">
+    <span id="days"></span>d :
+    <span id="hours"></span>h :
+    <span id="minutes"></span>m :
+    <span id="seconds"></span>s
+  </div>
+
+  <div class="card big-card">
     <h1>Wedding Celebrations</h1>
 
     <div class="events">
@@ -61,19 +69,12 @@
 
     </div>
 
-    <div class="countdown">
-      <div><span id="days"></span><p>Days</p></div>
-      <div><span id="hours"></span><p>Hours</p></div>
-      <div><span id="minutes"></span><p>Minutes</p></div>
-      <div><span id="seconds"></span><p>Seconds</p></div>
-    </div>
-
     <button onclick="prevPage()">⬅ Back</button>
     <button onclick="nextPage()">Next ➡</button>
-
   </div>
 </section>
 
+<!-- PAGE 3 -->
 <section class="page">
   <div class="card">
     <h1>Location 📍</h1>
@@ -87,7 +88,7 @@
   </div>
 </section>
 
-<!-- FAMILY -->
+<!-- PAGE 4 FAMILY -->
 <section class="page">
   <div class="card">
     <h1>Our Families ❤️</h1>
@@ -107,6 +108,7 @@
   </div>
 </section>
 
+<!-- PAGE 5 RSVP -->
 <section class="page">
   <div class="card">
     <h1>Confirm Your Presence 💌</h1>
