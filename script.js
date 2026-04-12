@@ -7,7 +7,7 @@ function enterSite() {
   document.getElementById("mainContent").style.display = "block";
 }
 
-/* NAVIGATION */
+/* NAV */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
@@ -48,7 +48,7 @@ function submitRSVP() {
   })
   .catch(() => {
     document.getElementById("successMsg").innerHTML =
-      "❌ Submission failed. Try again.";
+      "❌ Submission failed";
   });
 }
 
@@ -58,7 +58,6 @@ const weddingDate = new Date("Dec 6, 2026").getTime();
 setInterval(() => {
   let now = new Date().getTime();
   let diff = weddingDate - now;
-
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
   let el = document.getElementById("countdown");
@@ -66,3 +65,22 @@ setInterval(() => {
     el.innerHTML = "⏳ " + days + " days to go!";
   }
 }, 1000);
+
+/* 🌸 PETALS */
+const petals = document.querySelector(".petals");
+for (let i = 0; i < 25; i++) {
+  let p = document.createElement("span");
+  p.style.left = Math.random() * 100 + "vw";
+  p.style.animationDuration = (5 + Math.random() * 5) + "s";
+  petals.appendChild(p);
+}
+
+/* 💖 HEARTS */
+const hearts = document.querySelector(".hearts");
+for (let i = 0; i < 15; i++) {
+  let h = document.createElement("span");
+  h.innerHTML = "❤";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.animationDuration = (6 + Math.random() * 4) + "s";
+  hearts.appendChild(h);
+}
