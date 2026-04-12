@@ -1,11 +1,13 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
+/* ENTER */
 function enterSite() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
 }
 
+/* NAVIGATION */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
@@ -35,18 +37,18 @@ function submitRSVP() {
 
   document.getElementById("successMsg").innerHTML = "⏳ Sending...";
 
-  fetch("https://script.google.com/macros/s/AKfycby20e0-nKYEhg-SZsqkmhxRe7isac_zHsFwsijZqBpME2nMjlRf_hM11WyH5TO2IlKgWQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxxxlG-07faxRINSticO7yFvIjjFg60T-1xvfehTYBF2_H1gOQcbnmQvuI1mabJDXTCfQ/exec", {
     method: "POST",
-    headers: {"Content-Type": "application/json"},
     body: JSON.stringify({ name, guests, status })
   })
+  .then(res => res.json())
   .then(() => {
     document.getElementById("successMsg").innerHTML =
-      "✅ Thank you " + name;
+      "✅ Thank you " + name + "!";
   })
   .catch(() => {
     document.getElementById("successMsg").innerHTML =
-      "❌ Error submitting";
+      "❌ Submission failed. Try again.";
   });
 }
 
@@ -56,6 +58,7 @@ const weddingDate = new Date("Dec 6, 2026").getTime();
 setInterval(() => {
   let now = new Date().getTime();
   let diff = weddingDate - now;
+
   let days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
   let el = document.getElementById("countdown");
@@ -63,35 +66,3 @@ setInterval(() => {
     el.innerHTML = "⏳ " + days + " days to go!";
   }
 }, 1000);
-
-/* ADMIN */
-const ADMIN_PIN = "06122026";
-
-function checkAdmin() {
-  let pin = document.getElementById("adminPin").value;
-
-  if (pin === ADMIN_PIN) {
-    document.getElementById("adminLogin").style.display = "none";
-    document.getElementById("adminPanel").style.display = "block";
-    loadDashboard();
-  } else {
-    alert("Wrong PIN");
-  }
-}
-
-function loadDashboard() {
-  fetch("https://script.google.com/macros/s/AKfycby20e0-nKYEhg-SZsqkmhxRe7isac_zHsFwsijZqBpME2nMjlRf_hM11WyH5TO2IlKgWQ/exec")
-    .then(res => res.json())
-    .then(data => {
-      let html = "";
-      let total = data.length - 1;
-
-      document.getElementById("total").innerText = total;
-
-      for (let i = 1; i < data.length; i++) {
-        html += `<p>👤 ${data[i][0]} (${data[i][1]}) - ${data[i][2]}</p>`;
-      }
-
-      document.getElementById("guestData").innerHTML = html;
-    });
-}
