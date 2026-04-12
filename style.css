@@ -2,14 +2,43 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   color: white;
+  overflow: hidden;
 
   background:
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url("https://images.unsplash.com/photo-1519741497674-611481863552");
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486");
 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+}
+
+/* 🌸 PETALS */
+.petals span {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: pink;
+  border-radius: 50%;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh); }
+  100% { transform: translateY(110vh); }
+}
+
+/* 💖 HEARTS */
+.hearts span {
+  position: absolute;
+  color: rgba(255, 105, 180, 0.9);
+  font-size: 18px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
 }
 
 /* INTRO */
@@ -18,10 +47,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.center-box {
-  text-align: center;
 }
 
 .center-box h1 {
@@ -35,7 +60,6 @@ body {
   opacity: 0.8;
 }
 
-/* MAIN */
 #mainContent {
   display: none;
 }
@@ -62,8 +86,7 @@ body {
   text-align: center;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
-  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 50px rgba(255, 215, 0, 0.5);
 }
 
 /* BUTTON */
@@ -74,11 +97,6 @@ button {
   background: linear-gradient(45deg, gold, orange);
   margin: 10px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
 }
 
 /* INPUT */
@@ -91,8 +109,8 @@ input, select {
   width: 80%;
 }
 
-/* ANIMATION */
+/* FADE */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
