@@ -2,10 +2,14 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   color: white;
-  overflow: hidden;
 
-  /* LUXURY BACKGROUND */
-  background: radial-gradient(circle at top, #2b0a3d, #000);
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url("https://images.unsplash.com/photo-1519741497674-611481863552");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* INTRO */
@@ -28,7 +32,6 @@ body {
 }
 
 .tagline {
-  font-size: 1.2rem;
   opacity: 0.8;
 }
 
@@ -50,16 +53,17 @@ body {
   display: flex;
 }
 
-/* CARD (GLASS EFFECT) */
+/* CARD */
 .card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 /* BUTTON */
@@ -89,12 +93,6 @@ input, select {
 
 /* ANIMATION */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
