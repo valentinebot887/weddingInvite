@@ -1,8 +1,11 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: radial-gradient(circle, #1a0033, #000);
+  font-family: 'Segoe UI', sans-serif;
   color: white;
+  overflow: hidden;
+
+  /* LUXURY BACKGROUND */
+  background: radial-gradient(circle at top, #2b0a3d, #000);
 }
 
 /* INTRO */
@@ -19,7 +22,14 @@ body {
 
 .center-box h1 {
   font-size: 3rem;
-  color: gold;
+  background: linear-gradient(45deg, gold, #ffcc70);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  opacity: 0.8;
 }
 
 /* MAIN */
@@ -27,23 +37,29 @@ body {
   display: none;
 }
 
+/* PAGE */
 .page {
   display: none;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.8s ease;
 }
 
 .page.active {
   display: flex;
 }
 
-/* CARD */
+/* CARD (GLASS EFFECT) */
 .card {
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
   padding: 30px;
   border-radius: 20px;
   text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
 }
 
 /* BUTTON */
@@ -54,6 +70,11 @@ button {
   background: linear-gradient(45deg, gold, orange);
   margin: 10px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
 
 /* INPUT */
@@ -63,4 +84,17 @@ input, select {
   padding: 10px;
   border-radius: 10px;
   border: none;
+  width: 80%;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
