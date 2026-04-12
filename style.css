@@ -61,18 +61,13 @@ body {
   max-width: 900px;
 }
 
-/* EVENTS */
-.events {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.event img {
-  width: 250px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 10px;
+/* EVENT IMAGE */
+.event-full img {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 15px;
+  margin-top: 15px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.6);
 }
 
 /* TIMER */
