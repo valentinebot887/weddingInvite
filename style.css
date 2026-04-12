@@ -1,134 +1,56 @@
 body {
-  margin: 0;
-  font-family: Arial;
-  color: white;
-  overflow: hidden;
-  background: black;
+  margin:0;
+  color:white;
+  font-family:Arial;
 }
 
 /* INTRO */
 #intro {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60");
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1519741497674-611481863552");
+  background-size:cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.center-box {
-  text-align: center;
-  background: rgba(0,0,0,0.6);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* MAIN */
-#mainContent {
-  display: none;
-}
-
-/* PAGE BACKGROUNDS */
-.page:nth-of-type(1) { background: url("https://images.unsplash.com/photo-1519741497674-611481863552"); }
-.page:nth-of-type(2) { background: url("https://images.unsplash.com/photo-1623609163859-ca93c959b9cf"); }
-.page:nth-of-type(3) { background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b"); }
-.page:nth-of-type(4) { background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e"); }
-.page:nth-of-type(5) { background: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57"); }
-
+/* PAGE */
 .page {
-  background-size: cover;
-  background-position: center;
-  display: none;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  display:none;
+  height:100vh;
+  justify-content:center;
+  align-items:center;
+  background-size:cover;
 }
-.page.active {
-  display: flex;
-}
+
+.page.active { display:flex; }
 
 /* CARD */
 .card {
-  background: rgba(0,0,0,0.7);
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
+  background:rgba(0,0,0,0.7);
+  padding:20px;
+  border-radius:10px;
 }
-
-.big-card { max-width: 800px; }
 
 /* EVENTS */
-.events {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.event {
-  width: 200px;
-}
-.event img {
-  width: 100%;
-  height: 130px;
-  object-fit: cover;
-}
+.events { display:flex; gap:10px; }
+.event img { width:150px; }
 
 /* TIMER */
 .top-timer {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: black;
-  padding: 5px 10px;
-  border-radius: 10px;
-  color: gold;
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:black;
+  padding:5px;
 }
 
 /* BUTTON */
 button {
-  margin: 10px;
-  padding: 10px 20px;
-  background: gold;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-/* INPUT */
-input, select {
-  display: block;
-  margin: 10px auto;
-  padding: 8px;
-}
-
-/* LIST */
-#guestList {
-  margin-top: 10px;
-}
-
-/* PETALS */
-.petals span {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: pink;
-  border-radius: 50%;
-  animation: fall linear infinite;
-}
-@keyframes fall {
-  from { transform: translateY(-10vh); }
-  to { transform: translateY(110vh); }
-}
-
-/* HEARTS */
-.hearts span {
-  position: absolute;
-  color: hotpink;
-  animation: floatUp linear infinite;
-}
-@keyframes floatUp {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
+  padding:10px;
+  margin:5px;
+  background:gold;
+  border:none;
 }
