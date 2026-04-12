@@ -1,29 +1,31 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
-// ENTER
 function enterSite() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
 }
 
-// NAVIGATION
 function nextPage() {
-  pages[currentPage].classList.remove("active");
-  currentPage++;
-  pages[currentPage].classList.add("active");
+  if (currentPage < pages.length - 1) {
+    pages[currentPage].classList.remove("active");
+    currentPage++;
+    pages[currentPage].classList.add("active");
+  }
 }
 
 function prevPage() {
-  pages[currentPage].classList.remove("active");
-  currentPage--;
-  pages[currentPage].classList.add("active");
+  if (currentPage > 0) {
+    pages[currentPage].classList.remove("active");
+    currentPage--;
+    pages[currentPage].classList.add("active");
+  }
 }
 
-// RSVP FUNCTION (FIXED)
+/* RSVP */
 function submitRSVP() {
   let name = document.getElementById("name").value;
-  let guests = document.getElementById("guests").value;
+  let guests = document.getElementById("guests").value || "1";
   let status = document.getElementById("status").value;
 
   if (name === "") {
@@ -35,22 +37,12 @@ function submitRSVP() {
 
   fetch("https://script.google.com/macros/s/AKfycby20e0-nKYEhg-SZsqkmhxRe7isac_zHsFwsijZqBpME2nMjlRf_hM11WyH5TO2IlKgWQ/exec", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      name: name,
-      guests: guests,
-      status: status
-    })
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ name, guests, status })
   })
-  .then(res => res.json())
   .then(() => {
     document.getElementById("successMsg").innerHTML =
       "✅ Thank you " + name;
-
-    document.getElementById("name").value = "";
-    document.getElementById("guests").value = "";
   })
   .catch(() => {
     document.getElementById("successMsg").innerHTML =
@@ -58,7 +50,21 @@ function submitRSVP() {
   });
 }
 
-// ADMIN PIN
+/* COUNTDOWN */
+const weddingDate = new Date("Dec 6, 2026").getTime();
+
+setInterval(() => {
+  let now = new Date().getTime();
+  let diff = weddingDate - now;
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  let el = document.getElementById("countdown");
+  if (el) {
+    el.innerHTML = "⏳ " + days + " days to go!";
+  }
+}, 1000);
+
+/* ADMIN */
 const ADMIN_PIN = "06122026";
 
 function checkAdmin() {
@@ -73,12 +79,10 @@ function checkAdmin() {
   }
 }
 
-// LOAD DASHBOARD
 function loadDashboard() {
   fetch("https://script.google.com/macros/s/AKfycby20e0-nKYEhg-SZsqkmhxRe7isac_zHsFwsijZqBpME2nMjlRf_hM11WyH5TO2IlKgWQ/exec")
     .then(res => res.json())
     .then(data => {
-
       let html = "";
       let total = data.length - 1;
 
