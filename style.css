@@ -5,23 +5,19 @@ body {
   overflow: hidden;
 }
 
-/* FIX: BACKGROUND PER PAGE */
+/* BACKGROUND PER PAGE */
 .page:nth-of-type(1) {
   background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60");
 }
-
 .page:nth-of-type(2) {
   background: url("https://images.unsplash.com/photo-1605979257913-1704eb7b6246?auto=format&fit=crop&w=1200&q=60");
 }
-
 .page:nth-of-type(3) {
   background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1200&q=60");
 }
-
 .page:nth-of-type(4) {
   background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=1200&q=60");
 }
-
 .page:nth-of-type(5) {
   background: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57?auto=format&fit=crop&w=1200&q=60");
 }
@@ -34,7 +30,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 .page.active {
   display: flex;
 }
@@ -46,7 +41,6 @@ body {
   border-radius: 15px;
   text-align: center;
 }
-
 .big-card {
   max-width: 800px;
 }
@@ -54,28 +48,36 @@ body {
 /* EVENTS */
 .events {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .event {
-  width: 200px;
+  width: 220px;
   background: rgba(255,255,255,0.1);
-  border-radius: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
 }
-
+.event:hover {
+  transform: scale(1.05);
+}
 .event img {
   width: 100%;
-  height: 120px;
+  height: 140px;
   object-fit: cover;
 }
 
-/* COUNTDOWN */
-.countdown {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+/* TIMER */
+.top-timer {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: gold;
 }
 
 /* BUTTON */
@@ -87,6 +89,13 @@ button {
   border-radius: 20px;
 }
 
+/* INPUT */
+input, select {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+}
+
 /* PETALS */
 .petals span {
   position: absolute;
@@ -96,7 +105,6 @@ button {
   border-radius: 50%;
   animation: fall linear infinite;
 }
-
 @keyframes fall {
   from { transform: translateY(-10vh); }
   to { transform: translateY(110vh); }
@@ -108,7 +116,6 @@ button {
   color: hotpink;
   animation: floatUp linear infinite;
 }
-
 @keyframes floatUp {
   from { transform: translateY(100vh); }
   to { transform: translateY(-10vh); }
