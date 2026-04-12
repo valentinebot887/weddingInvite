@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at center, #1a0033, #000000);
+  font-family: Arial;
+  background: radial-gradient(circle, #1a0033, #000);
   color: white;
 }
 
@@ -20,20 +20,6 @@ body {
 .center-box h1 {
   font-size: 3rem;
   color: gold;
-}
-
-.center-box p {
-  color: #ddd;
-}
-
-/* BUTTON */
-button {
-  padding: 12px 25px;
-  border-radius: 25px;
-  border: none;
-  background: linear-gradient(45deg, gold, orange);
-  cursor: pointer;
-  margin: 10px;
 }
 
 /* MAIN */
@@ -58,7 +44,16 @@ button {
   padding: 30px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+/* BUTTON */
+button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(45deg, gold, orange);
+  margin: 10px;
+  cursor: pointer;
 }
 
 /* INPUT */
@@ -68,10 +63,4 @@ input, select {
   padding: 10px;
   border-radius: 10px;
   border: none;
-}
-
-/* ADMIN */
-#adminLogin input {
-  padding: 10px;
-  border-radius: 10px;
 }
