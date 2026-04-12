@@ -1,11 +1,13 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
+/* ENTER SITE */
 function enterSite() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
 }
 
+/* NAVIGATION */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
@@ -22,57 +24,92 @@ function prevPage() {
   }
 }
 
-/* RSVP */
+/* RSVP (FIXED) */
 function submitRSVP() {
   let name = document.getElementById("name").value;
   let guests = document.getElementById("guests").value || "1";
   let status = document.getElementById("status").value;
+
+  if (name === "") {
+    alert("Please enter your name");
+    return;
+  }
 
   let formData = new FormData();
   formData.append("name", name);
   formData.append("guests", guests);
   formData.append("status", status);
 
+  document.getElementById("successMsg").innerHTML = "⏳ Sending...";
+
   fetch("https://script.google.com/macros/s/AKfycbxxxlG-07faxRINSticO7yFvIjjFg60T-1xvfehTYBF2_H1gOQcbnmQvuI1mabJDXTCfQ/exec", {
     method: "POST",
     body: formData
   })
   .then(() => {
-    document.getElementById("successMsg").innerHTML = "✅ Thank you!";
+    document.getElementById("successMsg").innerHTML =
+      "✅ Thank you, " + name + "!";
+      
+    // clear inputs
+    document.getElementById("name").value = "";
+    document.getElementById("guests").value = "";
   })
-  .catch(() => {
-    document.getElementById("successMsg").innerHTML = "❌ Failed";
+  .catch((err) => {
+    console.error(err);
+    document.getElementById("successMsg").innerHTML =
+      "❌ Submission failed. Try again.";
   });
 }
 
-/* COUNTDOWN */
+/* COUNTDOWN TIMER */
 const weddingDate = new Date("Dec 6, 2026 00:00:00").getTime();
 
 setInterval(() => {
   let now = new Date().getTime();
   let diff = weddingDate - now;
 
-  document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-  document.getElementById("hours").innerText = Math.floor((diff/(1000*60*60))%24);
-  document.getElementById("minutes").innerText = Math.floor((diff/(1000*60))%60);
-  document.getElementById("seconds").innerText = Math.floor((diff/1000)%60);
+  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  let minutes = Math.floor((diff / (1000 * 60)) % 60);
+  let seconds = Math.floor((diff / 1000) % 60);
+
+  // Safe update (only if elements exist)
+  if (document.getElementById("days")) {
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+  }
+
 }, 1000);
 
-/* PETALS */
-const petals = document.querySelector(".petals");
-for (let i = 0; i < 20; i++) {
-  let p = document.createElement("span");
-  p.style.left = Math.random()*100+"vw";
-  p.style.animationDuration = (5+Math.random()*5)+"s";
-  petals.appendChild(p);
+/* 🌸 PETALS ANIMATION */
+const petalsContainer = document.querySelector(".petals");
+
+if (petalsContainer) {
+  for (let i = 0; i < 25; i++) {
+    let petal = document.createElement("span");
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    petal.style.opacity = Math.random();
+
+    petalsContainer.appendChild(petal);
+  }
 }
 
-/* HEARTS */
-const hearts = document.querySelector(".hearts");
-for (let i = 0; i < 10; i++) {
-  let h = document.createElement("span");
-  h.innerHTML = "❤";
-  h.style.left = Math.random()*100+"vw";
-  h.style.animationDuration = (6+Math.random()*4)+"s";
-  hearts.appendChild(h);
+/* 💖 HEARTS ANIMATION */
+const heartsContainer = document.querySelector(".hearts");
+
+if (heartsContainer) {
+  for (let i = 0; i < 15; i++) {
+    let heart = document.createElement("span");
+
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+    heart.style.opacity = Math.random();
+
+    heartsContainer.appendChild(heart);
+  }
 }
