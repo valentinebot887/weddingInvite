@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Invitation</title>
+
+<title>Sameekshya ❤️ Ankur</title>
 
 <link rel="stylesheet" href="style.css">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-<!-- Floating Hearts -->
-<div class="hearts"></div>
+<!-- INTRO -->
+<div id="intro">
+  <h1 class="fade">Sameekshya ❤️ Ankur</h1>
+  <p class="fade delay">Are Getting Married</p>
+  <button onclick="enterSite()">Enter Invitation</button>
+</div>
 
-<!-- Music Button -->
-<button class="music-btn" onclick="toggleMusic()">🎵</button>
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
+<!-- MAIN -->
+<div id="mainContent">
 
 <!-- Page 1 -->
 <section class="page active">
   <div class="card">
-    <h1>Sameekshya ❤️ Ankur</h1>
-    <p class="subtitle">A Beautiful Beginning</p>
-    <button onclick="nextPage()">Open Invitation</button>
+    <h1>Welcome 💌</h1>
+    <p>Click below to begin</p>
+    <button onclick="nextPage()">Continue</button>
   </div>
 </section>
 
@@ -50,9 +50,13 @@
 <!-- Page 3 -->
 <section class="page">
   <div class="card">
-    <h1>You're Invited 💌</h1>
+    <h1>You're Invited 👑</h1>
 
     <h2>Bhubaneshwar</h2>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Bhubaneswar" target="_blank">
+      <button>📍 View Location</button>
+    </a>
 
     <h3>Groom's Family</h3>
     <p>Anant Kumar & Anju Kumari</p>
@@ -63,11 +67,48 @@
     <p>Swapnika Das Babar</p>
     <p>Kuchuuu</p>
 
-    <h2>Join us in celebration</h2>
+    <button onclick="nextPage()">RSVP</button>
   </div>
 </section>
 
-<script src="script.js"></script>
+<!-- Page 4 RSVP -->
+<section class="page">
+  <div class="card">
+    <h1>RSVP 💌</h1>
 
+    <form action="https://formspree.io/f/mayvlqzv" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="number" name="guests" placeholder="Number of Guests" required>
+
+      <select name="attendance">
+        <option>Will Attend</option>
+        <option>Will Not Attend</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <button onclick="nextPage()">Guest Dashboard</button>
+  </div>
+</section>
+
+<!-- Page 5 Guest Tracker -->
+<section class="page">
+  <div class="card">
+    <h1>Guest Confirmation 👥</h1>
+
+    <h3>Friends</h3>
+    <div id="friendsList"></div>
+
+    <h3>Family</h3>
+    <div id="familyList"></div>
+
+    <button onclick="saveGuests()">💾 Save</button>
+  </div>
+</section>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
