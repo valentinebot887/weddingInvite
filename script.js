@@ -9,7 +9,7 @@ function enterSite() {
   document.getElementById("mainContent").style.display = "block";
 }
 
-/* NAV */
+/* NAVIGATION */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
@@ -34,9 +34,7 @@ function submitRSVP() {
 
   fetch(SCRIPT_URL, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, guests, status })
   })
   .then(res => res.json())
@@ -59,17 +57,15 @@ function checkAdmin() {
   }
 }
 
-/* LOAD DATA */
+/* LOAD GUESTS */
 function loadGuests() {
   fetch(SCRIPT_URL)
     .then(res => res.json())
     .then(data => {
       let html = "";
-
       for (let i = 1; i < data.length; i++) {
         html += `<p>👤 ${data[i][0]} (${data[i][1]}) - ${data[i][2]}</p>`;
       }
-
       document.getElementById("guestList").innerHTML = html;
     });
 }
@@ -80,10 +76,12 @@ const weddingDate = new Date("Dec 6, 2026").getTime();
 setInterval(() => {
   let diff = weddingDate - new Date().getTime();
 
-  document.getElementById("days").innerText = Math.floor(diff/(1000*60*60*24));
-  document.getElementById("hours").innerText = Math.floor((diff/(1000*60*60))%24);
-  document.getElementById("minutes").innerText = Math.floor((diff/(1000*60))%60);
-  document.getElementById("seconds").innerText = Math.floor((diff/1000)%60);
+  if (document.getElementById("days")) {
+    document.getElementById("days").innerText = Math.floor(diff/(1000*60*60*24));
+    document.getElementById("hours").innerText = Math.floor((diff/(1000*60*60))%24);
+    document.getElementById("minutes").innerText = Math.floor((diff/(1000*60))%60);
+    document.getElementById("seconds").innerText = Math.floor((diff/1000)%60);
+  }
 }, 1000);
 
 /* PETALS */
