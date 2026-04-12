@@ -20,7 +20,7 @@ function prevPage() {
   pages[currentPage].classList.add("active");
 }
 
-// RSVP → GOOGLE SHEET
+// RSVP FUNCTION (FIXED)
 function submitRSVP() {
   let name = document.getElementById("name").value;
   let guests = document.getElementById("guests").value;
@@ -35,6 +35,9 @@ function submitRSVP() {
 
   fetch("https://script.google.com/macros/s/AKfycby20e0-nKYEhg-SZsqkmhxRe7isac_zHsFwsijZqBpME2nMjlRf_hM11WyH5TO2IlKgWQ/exec", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({
       name: name,
       guests: guests,
@@ -44,7 +47,7 @@ function submitRSVP() {
   .then(res => res.json())
   .then(() => {
     document.getElementById("successMsg").innerHTML =
-      "✅ Thank you " + name + "!";
+      "✅ Thank you " + name;
 
     document.getElementById("name").value = "";
     document.getElementById("guests").value = "";
@@ -55,8 +58,8 @@ function submitRSVP() {
   });
 }
 
-// 🔐 ADMIN PIN
-const ADMIN_PIN = "1234"; // change this
+// ADMIN PIN
+const ADMIN_PIN = "06122026";
 
 function checkAdmin() {
   let pin = document.getElementById("adminPin").value;
@@ -64,14 +67,13 @@ function checkAdmin() {
   if (pin === ADMIN_PIN) {
     document.getElementById("adminLogin").style.display = "none";
     document.getElementById("adminPanel").style.display = "block";
-
     loadDashboard();
   } else {
-    alert("Wrong PIN ❌");
+    alert("Wrong PIN");
   }
 }
 
-// 📊 LOAD DASHBOARD
+// LOAD DASHBOARD
 function loadDashboard() {
   fetch("https://script.google.com/macros/s/AKfycby20e0-nKYEhg-SZsqkmhxRe7isac_zHsFwsijZqBpME2nMjlRf_hM11WyH5TO2IlKgWQ/exec")
     .then(res => res.json())
