@@ -17,6 +17,12 @@ body {
   align-items: center;
 }
 
+.center-box {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
 /* MAIN */
 #mainContent {
   display: none;
@@ -51,16 +57,20 @@ body {
   text-align: center;
 }
 
+.big-card {
+  max-width: 900px;
+}
+
 /* EVENTS */
 .events {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   justify-content: center;
 }
 
 .event img {
-  width: 220px;
-  height: 150px;
+  width: 250px;
+  height: 160px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -83,6 +93,14 @@ button {
   background: gold;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
+}
+
+/* INPUT */
+input, select {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
 }
 
 /* PETALS */
