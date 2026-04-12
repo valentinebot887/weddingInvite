@@ -9,7 +9,7 @@ function enterSite() {
   document.getElementById("mainContent").style.display = "block";
 }
 
-/* NAVIGATION */
+/* NAV */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
@@ -34,7 +34,9 @@ function submitRSVP() {
 
   fetch(SCRIPT_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify({ name, guests, status })
   })
   .then(res => res.json())
@@ -57,7 +59,7 @@ function checkAdmin() {
   }
 }
 
-/* LOAD GUESTS */
+/* LOAD DATA */
 function loadGuests() {
   fetch(SCRIPT_URL)
     .then(res => res.json())
