@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sameekshya ❤️ Ankur</title>
 <link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 <div id="intro">
   <div class="center-box">
     <h1>Sameekshya ❤️ Ankur</h1>
-    <p>Are Getting Married</p>
+    <p class="tagline">Are Getting Married</p>
     <button onclick="enterSite()">Enter Invitation</button>
   </div>
 </div>
@@ -21,31 +22,33 @@
 <!-- MAIN -->
 <div id="mainContent">
 
-<!-- PAGE 1 -->
 <section class="page active">
   <div class="card">
     <h1>Welcome 💌</h1>
+    <p>We invite you to celebrate our special day</p>
     <button onclick="nextPage()">Continue</button>
   </div>
 </section>
 
-<!-- PAGE 2 -->
 <section class="page">
   <div class="card">
     <h1>Wedding Dates</h1>
     <p>🌼 Haldi: 4 Dec 2026</p>
-    <p>💃 Mehendi: 5 Dec 2026</p>
+    <p>💃 Mehendi & Sangeet: 5 Dec 2026</p>
     <p>💍 Wedding: 6 Dec 2026</p>
+
+    <h2 id="countdown"></h2>
 
     <button onclick="prevPage()">⬅ Back</button>
     <button onclick="nextPage()">Next ➡</button>
   </div>
 </section>
 
-<!-- PAGE 3 -->
 <section class="page">
   <div class="card">
     <h1>Location 📍</h1>
+    <p>Bhubaneswar</p>
+
     <a href="https://www.google.com/maps/search/?api=1&query=Bhubaneswar" target="_blank">
       <button>Open Map</button>
     </a>
@@ -55,7 +58,24 @@
   </div>
 </section>
 
-<!-- PAGE 4 RSVP -->
+<section class="page">
+  <div class="card">
+    <h1>Our Families ❤️</h1>
+
+    <h3>Groom Family</h3>
+    <p>Anant Kumar & Anju Kumari</p>
+    <p>Ayush Kumar</p>
+
+    <h3>Bride Family</h3>
+    <p>Somendra Das & Aliva Das</p>
+    <p>Swapnika Das Babar</p>
+    <p>Kuchuuu</p>
+
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="nextPage()">Next ➡</button>
+  </div>
+</section>
+
 <section class="page">
   <div class="card">
     <h1>RSVP 💌</h1>
@@ -69,7 +89,6 @@
     </select>
 
     <button onclick="submitRSVP()">Submit</button>
-
     <p id="successMsg"></p>
 
     <button onclick="prevPage()">⬅ Back</button>
@@ -77,12 +96,11 @@
   </div>
 </section>
 
-<!-- PAGE 5 ADMIN -->
 <section class="page">
   <div class="card">
 
     <div id="adminLogin">
-      <h1>Admin Access 🔐</h1>
+      <h1>Admin 🔐</h1>
       <input type="password" id="adminPin" placeholder="Enter PIN">
       <button onclick="checkAdmin()">Login</button>
     </div>
@@ -100,6 +118,5 @@
 
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
