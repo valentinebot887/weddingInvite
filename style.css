@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: 'Segoe UI', sans-serif;
   color: white;
   overflow: hidden;
 }
@@ -18,15 +18,33 @@ body {
 }
 
 .center-box {
-  background: rgba(0,0,0,0.6);
-  padding: 20px;
-  border-radius: 10px;
+  text-align: center;
+  background: rgba(0,0,0,0.65);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.title {
+  font-size: 2.8rem;
+  color: gold;
+}
+
+.subtitle {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.enter-btn {
+  padding: 15px 30px;
+  background: linear-gradient(45deg, gold, orange);
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
 
 /* MAIN */
-#mainContent {
-  display: none;
-}
+#mainContent { display: none; }
 
 /* BACKGROUNDS */
 .page:nth-of-type(1) { background: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80"); }
@@ -34,18 +52,13 @@ body {
 .page:nth-of-type(3) { background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1400&q=80"); }
 .page:nth-of-type(4) { background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=1400&q=80"); }
 
-/* ✅ RSVP PAGE CUSTOM BACKGROUND */
+/* ✅ FIXED RSVP IMAGE */
 .rsvp-page {
-  background: url("invite.png");
+  background: url("./invite.png") no-repeat center center;
   background-size: cover;
-  background-position: center;
 }
 
-/* ADMIN PAGE */
-.page:nth-of-type(6) {
-  background: url("https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=1400&q=80");
-}
-
+/* PAGE */
 .page {
   display: none;
   height: 100vh;
@@ -53,9 +66,7 @@ body {
   align-items: center;
 }
 
-.page.active {
-  display: flex;
-}
+.page.active { display: flex; }
 
 /* CARD */
 .card {
@@ -65,12 +76,11 @@ body {
   text-align: center;
 }
 
-/* EVENT IMAGE */
+/* IMAGE */
 .event-full img {
   width: 100%;
   max-width: 750px;
   border-radius: 15px;
-  box-shadow: 0 0 25px rgba(255,215,0,0.6);
 }
 
 /* TIMER */
@@ -78,7 +88,7 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(0,0,0,0.7);
+  background: black;
   padding: 5px 10px;
   border-radius: 10px;
   color: gold;
@@ -98,31 +108,4 @@ input, select {
   display: block;
   margin: 10px auto;
   padding: 8px;
-}
-
-/* PETALS */
-.petals span {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: pink;
-  border-radius: 50%;
-  animation: fall linear infinite;
-}
-
-@keyframes fall {
-  from { transform: translateY(-10vh); }
-  to { transform: translateY(110vh); }
-}
-
-/* HEARTS */
-.hearts span {
-  position: absolute;
-  color: hotpink;
-  animation: floatUp linear infinite;
-}
-
-@keyframes floatUp {
-  from { transform: translateY(100vh); }
-  to { transform: translateY(-10vh); }
 }
