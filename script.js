@@ -1,18 +1,27 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
+// FIX: ENTER BUTTON
 function enterSite() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
 }
 
+// NEXT
 function nextPage() {
   pages[currentPage].classList.remove("active");
   currentPage++;
   pages[currentPage].classList.add("active");
 }
 
-// Countdown
+// BACK
+function prevPage() {
+  pages[currentPage].classList.remove("active");
+  currentPage--;
+  pages[currentPage].classList.add("active");
+}
+
+// COUNTDOWN
 const weddingDate = new Date("Dec 6, 2026").getTime();
 
 setInterval(() => {
@@ -20,59 +29,23 @@ setInterval(() => {
   const diff = weddingDate - now;
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-  document.getElementById("countdown").innerHTML =
-    "⏳ " + days + " Days Remaining";
+  const el = document.getElementById("countdown");
+  if (el) el.innerHTML = days + " days left 💍";
 }, 1000);
 
-// Guests
-const friends = [
-  "Shruti Chirag","Shaiviiiii Apoorva Sakshi","Parul Vanya Hunar",
-  "Gauri plus pati","Mehak Siddhika Sur","Rohan Dwij Utsav",
-  "Dhanashree Aishwarya","Abhilash Smit Arman","Locals",
-  "Kumkum Bhumika Neelam","Saddam Sumeet","Ruchita Asha",
-  "Suraj Atharv","Krishan Mohit","Rohit Utkarsh","Shreyash Manish",
-  "Vivek","Swaroop","Shubh Avantika Megha","Yash Shivam Kshitij",
-  "Gattu Choti","Shivani pati","Heena plus husband","Bittu plus husband",
-  "Suraj wife baby","Darshan wife baby","Pritha Abhik","Prashant Keerti"
-];
-
-const family = [
-  "Pawan Mammu","Manish Mammu","Chintu Mammu","Fufa Ji","Aman Chachu",
-  "Annu didi","Pusha","Vivek uncle","Meena aunty","Das aunty",
-  "Priyanka aunty","Anjali aunty","Lab ji aunty","Anku","Pallavi aunty",
-  "Kalyan uncle","Jayant uncle","Sunil uncle","Jyoti aunty"
-];
-
+// GUEST LIST
 function renderGuests() {
-  const fDiv = document.getElementById("friendsList");
-  const famDiv = document.getElementById("familyList");
+  const friendsDiv = document.getElementById("friendsList");
+  const familyDiv = document.getElementById("familyList");
 
-  fDiv.innerHTML = "";
-  famDiv.innerHTML = "";
+  if (!friendsDiv) return;
 
-  friends.forEach((name, i) => {
-    const checked = localStorage.getItem("f_"+i) === "true";
-    fDiv.innerHTML += `
-      <label>
-        <input type="checkbox" ${checked ? "checked" : ""} 
-        onchange="localStorage.setItem('f_${i}', this.checked)">
-        ${name}
-      </label>`;
-  });
-
-  family.forEach((name, i) => {
-    const checked = localStorage.getItem("fam_"+i) === "true";
-    famDiv.innerHTML += `
-      <label>
-        <input type="checkbox" ${checked ? "checked" : ""} 
-        onchange="localStorage.setItem('fam_${i}', this.checked)">
-        ${name}
-      </label>`;
-  });
-}
-
-function saveGuests() {
-  alert("Saved Successfully ✅");
+  friendsDiv.innerHTML = "<h3>Friends</h3>";
+  familyDiv.innerHTML = "<h3>Family</h3>";
 }
 
 window.onload = renderGuests;
+
+function saveGuests() {
+  alert("Saved ✅");
+}
