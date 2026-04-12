@@ -20,22 +20,17 @@ function prevPage() {
   pages[currentPage].classList.add("active");
 }
 
-/* RSVP FIXED */
 function submitRSVP() {
   let formData = new FormData();
   formData.append("name", document.getElementById("name").value);
   formData.append("guests", document.getElementById("guests").value);
   formData.append("status", document.getElementById("status").value);
 
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    body: formData
-  })
+  fetch(SCRIPT_URL, { method: "POST", body: formData })
   .then(() => alert("✅ Submitted Successfully"))
   .catch(() => alert("❌ Failed"));
 }
 
-/* ADMIN */
 const PIN = "06122026";
 
 function checkAdmin() {
