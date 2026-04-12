@@ -3,24 +3,39 @@ body {
   font-family: Arial;
   color: white;
   overflow: hidden;
+  background: black;
 }
 
-/* BACKGROUND PER PAGE */
-.page:nth-of-type(1) {
+/* INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
   background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.page:nth-of-type(2) {
-  background: url("https://images.unsplash.com/photo-1605979257913-1704eb7b6246?auto=format&fit=crop&w=1200&q=60");
+
+.center-box {
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
 }
-.page:nth-of-type(3) {
-  background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1200&q=60");
+
+/* MAIN */
+#mainContent {
+  display: none;
 }
-.page:nth-of-type(4) {
-  background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=1200&q=60");
-}
-.page:nth-of-type(5) {
-  background: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57?auto=format&fit=crop&w=1200&q=60");
-}
+
+/* PAGE BACKGROUNDS */
+.page:nth-of-type(1) { background: url("https://images.unsplash.com/photo-1519741497674-611481863552"); }
+.page:nth-of-type(2) { background: url("https://images.unsplash.com/photo-1623609163859-ca93c959b9cf"); }
+.page:nth-of-type(3) { background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b"); }
+.page:nth-of-type(4) { background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e"); }
+.page:nth-of-type(5) { background: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57"); }
 
 .page {
   background-size: cover;
@@ -36,35 +51,27 @@ body {
 
 /* CARD */
 .card {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   padding: 25px;
   border-radius: 15px;
   text-align: center;
 }
-.big-card {
-  max-width: 800px;
-}
+
+.big-card { max-width: 800px; }
 
 /* EVENTS */
 .events {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
 }
 .event {
-  width: 220px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: 0.3s;
-}
-.event:hover {
-  transform: scale(1.05);
+  width: 200px;
 }
 .event img {
   width: 100%;
-  height: 140px;
+  height: 130px;
   object-fit: cover;
 }
 
@@ -73,10 +80,9 @@ body {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(0,0,0,0.6);
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  background: black;
+  padding: 5px 10px;
+  border-radius: 10px;
   color: gold;
 }
 
@@ -87,6 +93,7 @@ button {
   background: gold;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 /* INPUT */
@@ -94,6 +101,11 @@ input, select {
   display: block;
   margin: 10px auto;
   padding: 8px;
+}
+
+/* LIST */
+#guestList {
+  margin-top: 10px;
 }
 
 /* PETALS */
