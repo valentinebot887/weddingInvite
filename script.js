@@ -1,11 +1,13 @@
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
+/* ENTER */
 function enterSite() {
   document.getElementById("intro").style.display = "none";
   document.getElementById("mainContent").style.display = "block";
 }
 
+/* NAV */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
@@ -13,7 +15,6 @@ function nextPage() {
     pages[currentPage].classList.add("active");
   }
 }
-
 function prevPage() {
   if (currentPage > 0) {
     pages[currentPage].classList.remove("active");
@@ -22,37 +23,40 @@ function prevPage() {
   }
 }
 
-/* RSVP */
+/* RSVP LOCAL STORAGE */
 function submitRSVP() {
   let name = document.getElementById("name").value;
   let guests = document.getElementById("guests").value || "1";
   let status = document.getElementById("status").value;
 
-  let formData = new FormData();
-  formData.append("name", name);
-  formData.append("guests", guests);
-  formData.append("status", status);
+  let list = JSON.parse(localStorage.getItem("guests") || "[]");
 
-  fetch("https://script.google.com/macros/s/AKfycbxxxlG-07faxRINSticO7yFvIjjFg60T-1xvfehTYBF2_H1gOQcbnmQvuI1mabJDXTCfQ/exec", {
-    method: "POST",
-    body: formData
-  })
-  .then(() => {
-    document.getElementById("successMsg").innerHTML = "✅ Thank you!";
-  })
-  .catch(() => {
-    document.getElementById("successMsg").innerHTML = "❌ Failed";
-  });
+  list.push({ name, guests, status });
+
+  localStorage.setItem("guests", JSON.stringify(list));
+
+  displayGuests();
 }
+
+/* DISPLAY GUESTS */
+function displayGuests() {
+  let list = JSON.parse(localStorage.getItem("guests") || "[]");
+  let html = "";
+
+  list.forEach(g => {
+    html += `<p>👤 ${g.name} (${g.guests}) - ${g.status}</p>`;
+  });
+
+  document.getElementById("guestList").innerHTML = html;
+}
+
+displayGuests();
 
 /* TIMER */
 const weddingDate = new Date("Dec 6, 2026 00:00:00").getTime();
 
 setInterval(() => {
-  let now = new Date().getTime();
-  let diff = weddingDate - now;
-
-  if (diff < 0) return;
+  let diff = weddingDate - new Date().getTime();
 
   document.getElementById("days").innerText = Math.floor(diff/(1000*60*60*24));
   document.getElementById("hours").innerText = Math.floor((diff/(1000*60*60))%24);
