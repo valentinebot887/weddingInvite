@@ -1,16 +1,30 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial;
   color: white;
   overflow: hidden;
 }
 
-/* BACKGROUNDS */
-.page:nth-child(1) { background: url("https://images.unsplash.com/photo-1519741497674-611481863552"); }
-.page:nth-child(2) { background: url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486"); }
-.page:nth-child(3) { background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b"); }
-.page:nth-child(4) { background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e"); }
-.page:nth-child(5) { background: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57"); }
+/* FIX: BACKGROUND PER PAGE */
+.page:nth-of-type(1) {
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60");
+}
+
+.page:nth-of-type(2) {
+  background: url("https://images.unsplash.com/photo-1605979257913-1704eb7b6246?auto=format&fit=crop&w=1200&q=60");
+}
+
+.page:nth-of-type(3) {
+  background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1200&q=60");
+}
+
+.page:nth-of-type(4) {
+  background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=1200&q=60");
+}
+
+.page:nth-of-type(5) {
+  background: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57?auto=format&fit=crop&w=1200&q=60");
+}
 
 .page {
   background-size: cover;
@@ -21,7 +35,9 @@ body {
   align-items: center;
 }
 
-.page.active { display: flex; }
+.page.active {
+  display: flex;
+}
 
 /* CARD */
 .card {
@@ -31,13 +47,16 @@ body {
   text-align: center;
 }
 
-.big-card { max-width: 800px; }
+.big-card {
+  max-width: 800px;
+}
 
 /* EVENTS */
 .events {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .event {
@@ -66,14 +85,6 @@ button {
   background: gold;
   border: none;
   border-radius: 20px;
-  cursor: pointer;
-}
-
-/* INPUT */
-input, select {
-  display: block;
-  margin: 10px auto;
-  padding: 8px;
 }
 
 /* PETALS */
