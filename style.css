@@ -3,7 +3,6 @@ body {
   font-family: Arial;
   color: white;
   overflow: hidden;
-  background: black;
 }
 
 /* INTRO */
@@ -11,17 +10,11 @@ body {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=60");
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80");
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.center-box {
-  background: rgba(0,0,0,0.6);
-  padding: 20px;
-  border-radius: 10px;
 }
 
 /* MAIN */
@@ -29,20 +22,30 @@ body {
   display: none;
 }
 
-/* PAGE */
+/* BACKGROUNDS */
+.page:nth-of-type(1) { background: url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80"); }
+.page:nth-of-type(2) { background: url("https://images.unsplash.com/photo-1623609163859-ca93c959b9cf?auto=format&fit=crop&w=1400&q=80"); }
+.page:nth-of-type(3) { background: url("https://images.unsplash.com/photo-1504198458649-3128b932f49b?auto=format&fit=crop&w=1400&q=80"); }
+.page:nth-of-type(4) { background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=1400&q=80"); }
+.page:nth-of-type(5) { background: url("https://images.unsplash.com/photo-1520857014576-2c4f4c972b57?auto=format&fit=crop&w=1400&q=80"); }
+.page:nth-of-type(6) { background: url("https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=1400&q=80"); }
+
 .page {
+  background-size: cover;
+  background-position: center;
   display: none;
   height: 100vh;
   justify-content: center;
   align-items: center;
 }
+
 .page.active {
   display: flex;
 }
 
 /* CARD */
 .card {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.65);
   padding: 25px;
   border-radius: 15px;
   text-align: center;
@@ -51,20 +54,23 @@ body {
 /* EVENTS */
 .events {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  justify-content: center;
 }
+
 .event img {
-  width: 150px;
-  height: 120px;
+  width: 220px;
+  height: 150px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 /* TIMER */
 .top-timer {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  background: black;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.7);
   padding: 5px 10px;
   border-radius: 10px;
   color: gold;
@@ -72,19 +78,11 @@ body {
 
 /* BUTTON */
 button {
-  padding: 10px;
+  padding: 10px 20px;
   margin: 5px;
   background: gold;
   border: none;
   border-radius: 20px;
-  cursor: pointer;
-}
-
-/* INPUT */
-input, select {
-  display: block;
-  margin: 10px auto;
-  padding: 8px;
 }
 
 /* PETALS */
@@ -96,6 +94,7 @@ input, select {
   border-radius: 50%;
   animation: fall linear infinite;
 }
+
 @keyframes fall {
   from { transform: translateY(-10vh); }
   to { transform: translateY(110vh); }
@@ -107,6 +106,7 @@ input, select {
   color: hotpink;
   animation: floatUp linear infinite;
 }
+
 @keyframes floatUp {
   from { transform: translateY(100vh); }
   to { transform: translateY(-10vh); }
