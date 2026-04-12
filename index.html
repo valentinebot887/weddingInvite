@@ -1,51 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Wedding Invitation</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
+<!-- Floating Hearts -->
+<div class="hearts"></div>
+
+<!-- Music Button -->
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 <!-- Page 1 -->
-<div class="page active" id="page1">
-  <h1>💌 You're Invited 💌</h1>
-  <p>Click below to reveal the secret</p>
-  <button onclick="nextPage()">Open Invitation</button>
-</div>
+<section class="page active">
+  <div class="card">
+    <h1>Sameekshya ❤️ Ankur</h1>
+    <p class="subtitle">A Beautiful Beginning</p>
+    <button onclick="nextPage()">Open Invitation</button>
+  </div>
+</section>
 
 <!-- Page 2 -->
-<div class="page" id="page2">
-  <h1>Wedding Dates</h1>
-  <p>✨ Haldi: 4th Dec 2026</p>
-  <p>✨ Mehendi & Sangeet: 5th Dec 2026</p>
-  <p>💍 Wedding: 6th Dec 2026</p>
-  <button onclick="nextPage()">Continue</button>
-</div>
+<section class="page">
+  <div class="card">
+    <h1>Wedding Dates</h1>
+
+    <p>🌼 Haldi: 4 Dec 2026</p>
+    <p>💃 Mehendi & Sangeet: 5 Dec 2026</p>
+    <p>💍 Wedding: 6 Dec 2026</p>
+
+    <h2 id="countdown"></h2>
+
+    <button onclick="nextPage()">Continue</button>
+  </div>
+</section>
 
 <!-- Page 3 -->
-<div class="page" id="page3">
-  <h1>Sameekshya ❤️ Ankur</h1>
+<section class="page">
+  <div class="card">
+    <h1>You're Invited 💌</h1>
 
-  <h2>Wedding Location</h2>
-  <p>Bhubaneshwar</p>
+    <h2>Bhubaneshwar</h2>
 
-  <h2>Groom's Family</h2>
-  <p>Father: Anant Kumar</p>
-  <p>Mother: Anju Kumari</p>
-  <p>Brother: Ayush Kumar</p>
+    <h3>Groom's Family</h3>
+    <p>Anant Kumar & Anju Kumari</p>
+    <p>Ayush Kumar</p>
 
-  <h2>Bride's Family</h2>
-  <p>Father: Somendra Das</p>
-  <p>Mother: Aliva Das</p>
-  <p>Sister: Swapnika Das Babar</p>
-  <p>Niece: Kuchuuu</p>
+    <h3>Bride's Family</h3>
+    <p>Somendra Das & Aliva Das</p>
+    <p>Swapnika Das Babar</p>
+    <p>Kuchuuu</p>
 
-  <h2>With Love</h2>
-  <p>Together with their families</p>
-
-  <h1>We invite you to celebrate our wedding</h1>
-</div>
+    <h2>Join us in celebration</h2>
+  </div>
+</section>
 
 <script src="script.js"></script>
 
