@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sameekshya ❤️ Ankur</title>
+
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
-</head>
 
+</head>
 <body>
 
 <!-- INTRO -->
@@ -19,9 +20,10 @@
   </div>
 </div>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 <div id="mainContent">
 
+<!-- PAGE 1 -->
 <section class="page active">
   <div class="card">
     <h1>Welcome 💌</h1>
@@ -30,6 +32,7 @@
   </div>
 </section>
 
+<!-- PAGE 2 -->
 <section class="page">
   <div class="card">
     <h1>Wedding Dates</h1>
@@ -44,6 +47,7 @@
   </div>
 </section>
 
+<!-- PAGE 3 -->
 <section class="page">
   <div class="card">
     <h1>Location 📍</h1>
@@ -58,6 +62,7 @@
   </div>
 </section>
 
+<!-- PAGE 4 -->
 <section class="page">
   <div class="card">
     <h1>Our Families ❤️</h1>
@@ -76,9 +81,10 @@
   </div>
 </section>
 
+<!-- PAGE 5 -->
 <section class="page">
   <div class="card">
-    <h1>RSVP 💌</h1>
+    <h1>Confirm Your Presence 💌</h1>
 
     <input id="name" placeholder="Your Name">
     <input id="guests" placeholder="Number of Guests">
@@ -89,30 +95,10 @@
     </select>
 
     <button onclick="submitRSVP()">Submit</button>
+
     <p id="successMsg"></p>
 
     <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Admin ➡</button>
-  </div>
-</section>
-
-<section class="page">
-  <div class="card">
-
-    <div id="adminLogin">
-      <h1>Admin 🔐</h1>
-      <input type="password" id="adminPin" placeholder="Enter PIN">
-      <button onclick="checkAdmin()">Login</button>
-    </div>
-
-    <div id="adminPanel" style="display:none;">
-      <h1>Dashboard 📊</h1>
-      <h3>Total Guests: <span id="total"></span></h3>
-      <div id="guestData"></div>
-    </div>
-
-    <button onclick="prevPage()">⬅ Back</button>
-
   </div>
 </section>
 
