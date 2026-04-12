@@ -7,8 +7,8 @@
 
 <link rel="stylesheet" href="style.css">
 <script src="script.js" defer></script>
-
 </head>
+
 <body>
 
 <div class="petals"></div>
@@ -23,9 +23,9 @@
   </div>
 </div>
 
-<!-- MAIN -->
 <div id="mainContent">
 
+<!-- PAGE 1 -->
 <section class="page active">
   <div class="card">
     <h1>Welcome 💌</h1>
@@ -33,6 +33,7 @@
   </div>
 </section>
 
+<!-- PAGE 2 -->
 <section class="page">
 
 <div class="top-timer">
@@ -49,35 +50,40 @@
 <div class="events">
 
 <div class="event">
-<img src="https://images.unsplash.com/photo-1623609163859-ca93c959b9cf?auto=format&fit=crop&w=500&q=60">
+<img src="https://images.unsplash.com/photo-1623609163859-ca93c959b9cf?auto=format&fit=crop&w=1200&q=80">
 <h3>Haldi Ceremony</h3>
 </div>
 
 <div class="event">
-<img src="https://images.unsplash.com/photo-1603575448360-153f093fd0e9?auto=format&fit=crop&w=500&q=60">
+<img src="https://images.unsplash.com/photo-1603575448360-153f093fd0e9?auto=format&fit=crop&w=1200&q=80">
 <h3>Mehendi Ceremony</h3>
 </div>
 
 <div class="event">
-<img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=500&q=60">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
 <h3>Wedding Ceremony</h3>
 </div>
 
 </div>
 
-<button onclick="prevPage()">⬅</button>
-<button onclick="nextPage()">➡</button>
+<button onclick="prevPage()">⬅ Back</button>
+<button onclick="nextPage()">Next ➡</button>
 
 </div>
 </section>
 
+<!-- PAGE 3 -->
 <section class="page">
   <div class="card">
     <h1>Location 📍</h1>
     <p>Bhubaneswar</p>
+
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="nextPage()">Next ➡</button>
   </div>
 </section>
 
+<!-- PAGE 4 -->
 <section class="page">
   <div class="card">
     <h1>Our Families ❤️</h1>
@@ -92,11 +98,12 @@
     <p><b>Chirayu Das Babar</b></p>
     <p>Kuchuuu</p>
 
-    <button onclick="prevPage()">⬅</button>
-    <button onclick="nextPage()">➡</button>
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="nextPage()">Next ➡</button>
   </div>
 </section>
 
+<!-- PAGE 5 -->
 <section class="page">
   <div class="card">
 
@@ -112,12 +119,13 @@
 
     <button onclick="submitRSVP()">Submit</button>
 
-    <button onclick="nextPage()">Admin</button>
+    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="nextPage()">Admin ➡</button>
 
   </div>
 </section>
 
-<!-- ADMIN -->
+<!-- PAGE 6 ADMIN -->
 <section class="page">
   <div class="card">
 
@@ -131,6 +139,8 @@
       <h2>Guest List</h2>
       <div id="guestList"></div>
     </div>
+
+    <button onclick="prevPage()">⬅ Back</button>
 
   </div>
 </section>
