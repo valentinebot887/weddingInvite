@@ -7,15 +7,13 @@
 <title>Sameekshya ❤️ Ankur</title>
 
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- INTRO -->
 <div id="intro">
-  <div class="intro-content">
+  <div class="center-box">
     <h1>Sameekshya ❤️ Ankur</h1>
     <p>Are Getting Married</p>
     <button onclick="enterSite()">Enter Invitation</button>
@@ -38,20 +36,6 @@
     <p>Haldi: 4 Dec</p>
     <p>Mehendi: 5 Dec</p>
     <p>Wedding: 6 Dec</p>
-    <h2 id="countdown"></h2>
-
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Next ➡</button>
-  </div>
-</section>
-
-<section class="page">
-  <div class="card">
-    <h1>Location 📍</h1>
-
-    <a href="https://www.google.com/maps/search/?api=1&query=Bhubaneswar" target="_blank">
-      <button>Open Map</button>
-    </a>
 
     <button onclick="prevPage()">⬅ Back</button>
     <button onclick="nextPage()">Next ➡</button>
@@ -62,25 +46,19 @@
   <div class="card">
     <h1>RSVP 💌</h1>
 
-    <form action="https://formspree.io/f/mayvlqzv" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <button type="submit">Submit</button>
-    </form>
+    <input id="name" placeholder="Your Name">
+    <input id="guests" placeholder="Guests">
+    
+    <select id="status">
+      <option>Will Attend</option>
+      <option>Will Not Attend</option>
+    </select>
+
+    <button onclick="submitRSVP()">Submit</button>
+
+    <p id="successMsg"></p>
 
     <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Guest List ➡</button>
-  </div>
-</section>
-
-<section class="page">
-  <div class="card">
-    <h1>Guest Confirmation 👥</h1>
-
-    <div id="friendsList"></div>
-    <div id="familyList"></div>
-
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="saveGuests()">Save</button>
   </div>
 </section>
 
