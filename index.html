@@ -17,9 +17,19 @@
 <!-- INTRO -->
 <div id="intro">
   <div class="center-box">
-    <h1>Sameekshya ❤️ Ankur</h1>
-    <p>Are Getting Married</p>
-    <button onclick="enterSite()">Enter Invitation</button>
+
+    <h1 class="title">Sameekshya ❤️ Ankur</h1>
+
+    <p class="subtitle">
+      Together with their families,<br>
+      joyfully invite you to celebrate<br>
+      their wedding journey 💍
+    </p>
+
+    <button class="enter-btn" onclick="enterSite()">
+      ✨ View Invitation ✨
+    </button>
+
   </div>
 </div>
 
@@ -29,6 +39,7 @@
 <section class="page active">
   <div class="card">
     <h1>Welcome 💌</h1>
+    <p>We are getting married and would love to have you with us ❤️</p>
     <button onclick="nextPage()">Continue</button>
   </div>
 </section>
@@ -36,23 +47,25 @@
 <!-- PAGE 2 -->
 <section class="page">
 
-  <div class="top-timer">
-    <span id="days"></span>d :
-    <span id="hours"></span>h :
-    <span id="minutes"></span>m :
-    <span id="seconds"></span>s
-  </div>
+<div class="top-timer">
+<span id="days"></span>d :
+<span id="hours"></span>h :
+<span id="minutes"></span>m :
+<span id="seconds"></span>s
+</div>
 
-  <div class="card big-card">
-    <h1>Wedding Celebrations</h1>
+<div class="card big-card">
 
-    <div class="event-full">
-      <img src="events.png">
-    </div>
+<h1>Wedding Celebrations</h1>
 
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Next ➡</button>
-  </div>
+<div class="event-full">
+  <img src="./events.png" alt="Events">
+</div>
+
+<button onclick="prevPage()">⬅ Back</button>
+<button onclick="nextPage()">Next ➡</button>
+
+</div>
 </section>
 
 <!-- PAGE 3 -->
@@ -91,9 +104,10 @@
   <div class="card">
 
     <h1>Confirm Your Presence 💌</h1>
+    <p>Your presence will make our day even more special ✨</p>
 
     <input id="name" placeholder="Your Name">
-    <input id="guests" placeholder="Guests">
+    <input id="guests" placeholder="Number of Guests">
 
     <select id="status">
       <option>Will Attend</option>
@@ -108,7 +122,7 @@
   </div>
 </section>
 
-<!-- PAGE 6 ADMIN -->
+<!-- ADMIN -->
 <section class="page">
   <div class="card">
 
