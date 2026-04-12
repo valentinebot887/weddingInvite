@@ -14,7 +14,7 @@
 <div class="petals"></div>
 <div class="hearts"></div>
 
-<!-- INTRO -->
+<!-- INTRO (ONLY FIRST SCREEN) -->
 <div id="intro">
   <div class="center-box">
     <h1>Sameekshya ❤️ Ankur</h1>
@@ -34,98 +34,106 @@
   </div>
 </section>
 
-<!-- PAGE 2 (DATES + TIMER) -->
+<!-- PAGE 2 -->
 <section class="page">
 
-  <div class="top-timer">
-    <span id="days"></span>d :
-    <span id="hours"></span>h :
-    <span id="minutes"></span>m :
-    <span id="seconds"></span>s
-  </div>
+<div class="top-timer">
+<span id="days"></span>d :
+<span id="hours"></span>h :
+<span id="minutes"></span>m :
+<span id="seconds"></span>s
+</div>
 
-  <div class="card big-card">
-    <h1>Wedding Celebrations</h1>
+<div class="card big-card">
 
-    <div class="events">
+<h1>Wedding Celebrations</h1>
 
-      <div class="event">
-        <img src="https://images.unsplash.com/photo-1583391733956-6c77a0c7baf9?auto=format&fit=crop&w=500&q=60">
-        <h3>Haldi Ceremony</h3>
-        <p>4 Dec 2026</p>
-      </div>
+<div class="events">
 
-      <div class="event">
-        <img src="https://images.unsplash.com/photo-1603575448360-153f093fd0e9?auto=format&fit=crop&w=500&q=60">
-        <h3>Mehendi Ceremony</h3>
-        <p>5 Dec 2026</p>
-      </div>
+<div class="event">
+<img src="https://images.unsplash.com/photo-1623609163859-ca93c959b9cf?auto=format&fit=crop&w=500&q=60">
+<h3>Haldi Ceremony</h3>
+<p>4 Dec 2026</p>
+</div>
 
-      <div class="event">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=500&q=60">
-        <h3>Wedding Ceremony</h3>
-        <p>6 Dec 2026</p>
-      </div>
+<div class="event">
+<img src="https://images.unsplash.com/photo-1603575448360-153f093fd0e9?auto=format&fit=crop&w=500&q=60">
+<h3>Mehendi Ceremony</h3>
+<p>5 Dec 2026</p>
+</div>
 
-    </div>
+<div class="event">
+<img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=500&q=60">
+<h3>Wedding Ceremony</h3>
+<p>6 Dec 2026</p>
+</div>
 
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Next ➡</button>
-  </div>
+</div>
+
+<button onclick="prevPage()">⬅ Back</button>
+<button onclick="nextPage()">Next ➡</button>
+
+</div>
 </section>
 
 <!-- PAGE 3 -->
 <section class="page">
-  <div class="card">
-    <h1>Location 📍</h1>
-    <p>Bhubaneswar</p>
-    <a href="https://www.google.com/maps/search/?api=1&query=Bhubaneswar" target="_blank">
-      <button>Open Map</button>
-    </a>
+<div class="card">
+<h1>Location 📍</h1>
+<p>Bhubaneswar</p>
+<a href="https://www.google.com/maps/search/?api=1&query=Bhubaneswar" target="_blank">
+<button>Open Map</button>
+</a>
 
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Next ➡</button>
-  </div>
+<button onclick="prevPage()">⬅ Back</button>
+<button onclick="nextPage()">Next ➡</button>
+</div>
 </section>
 
-<!-- PAGE 4 FAMILY -->
+<!-- PAGE 4 -->
 <section class="page">
-  <div class="card">
-    <h1>Our Families ❤️</h1>
+<div class="card">
 
-    <h3>Groom Family</h3>
-    <p>Anant Kumar & Anju Kumari</p>
-    <p>Ayush Kumar</p>
+<h1>Our Families ❤️</h1>
 
-    <h3>Bride Family</h3>
-    <p>Somendra Das & Aliva Das</p>
-    <p>Swapnika Das Babar</p>
-    <p><b>Chirayu Das Babar</b></p>
-    <p>Kuchuuu</p>
+<h3>Groom Family</h3>
+<p>Anant Kumar & Anju Kumari</p>
+<p>Ayush Kumar</p>
 
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Next ➡</button>
-  </div>
+<h3>Bride Family</h3>
+<p>Somendra Das & Aliva Das</p>
+<p>Swapnika Das Babar</p>
+<p><b>Chirayu Das Babar</b></p>
+<p>Kuchuuu</p>
+
+<button onclick="prevPage()">⬅ Back</button>
+<button onclick="nextPage()">Next ➡</button>
+
+</div>
 </section>
 
 <!-- PAGE 5 RSVP -->
 <section class="page">
-  <div class="card">
-    <h1>Confirm Your Presence 💌</h1>
+<div class="card">
 
-    <input id="name" placeholder="Your Name">
-    <input id="guests" placeholder="Guests">
+<h1>Confirm Your Presence 💌</h1>
 
-    <select id="status">
-      <option>Will Attend</option>
-      <option>Will Not Attend</option>
-    </select>
+<input id="name" placeholder="Your Name">
+<input id="guests" placeholder="Guests">
 
-    <button onclick="submitRSVP()">Submit</button>
-    <p id="successMsg"></p>
+<select id="status">
+<option>Will Attend</option>
+<option>Will Not Attend</option>
+</select>
 
-    <button onclick="prevPage()">⬅ Back</button>
-  </div>
+<button onclick="submitRSVP()">Submit</button>
+
+<h3>Guest List</h3>
+<div id="guestList"></div>
+
+<button onclick="prevPage()">⬅ Back</button>
+
+</div>
 </section>
 
 </div>
