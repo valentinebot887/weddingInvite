@@ -5,21 +5,12 @@ body {
   color: white;
 }
 
-/* APP CONTAINER */
-#app {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* PAGE FIX (IMPORTANT) */
+/* PAGE SYSTEM (FIXED) */
 .page {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
   display: none;
+  min-height: 100vh;
+
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -45,15 +36,10 @@ body {
   margin: 15px 0;
 }
 
-/* BUTTON GROUP */
-.btns {
-  margin-top: 10px;
-}
-
 /* BUTTON */
 button {
   padding: 10px 20px;
-  margin: 5px;
+  margin: 10px;
   background: gold;
   border: none;
   border-radius: 20px;
