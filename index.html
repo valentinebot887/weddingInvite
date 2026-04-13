@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sameekshya ❤️ Ankur</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameekshya ❤️ Ankur</title>
 
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<!-- ENVELOPE -->
+<!-- 💌 ENVELOPE -->
 <div id="envelope">
   <div class="envelope-body">
+
     <div class="flap"></div>
     <div class="seal">💍</div>
 
@@ -21,122 +22,127 @@
       <h1>Sameekshya ❤️ Ankur</h1>
       <p>Tap to Open Invitation</p>
     </div>
+
   </div>
 </div>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 <div id="mainContent">
 
-<!-- PAGE 1 -->
-<section class="page active">
-  <div class="card">
-    <h1>Welcome 💌</h1>
-    <p>
-      Together with their families,<br><br>
-      Sameekshya & Ankur invite you<br>
-      to celebrate their wedding 💖
-    </p>
-    <button onclick="nextPage()">Continue</button>
-  </div>
-</section>
+  <!-- PAGE 1 -->
+  <section class="page active">
+    <div class="card">
+      <h1>Welcome 💌</h1>
+      <p>
+        Together with their families,<br><br>
+        Sameekshya & Ankur invite you<br>
+        to celebrate their wedding 💖
+      </p>
 
-<!-- PAGE 2 -->
-<section class="page">
+      <button onclick="nextPage()">Continue</button>
+    </div>
+  </section>
 
-<div class="top-timer">
-<span id="days"></span>d :
-<span id="hours"></span>h :
-<span id="minutes"></span>m :
-<span id="seconds"></span>s
-</div>
+  <!-- PAGE 2 (CEREMONY) -->
+  <section class="page">
 
-<div class="card">
-<h1>Wedding Celebrations</h1>
-
-<img src="events.png" class="event-img">
-
-<br>
-
-<button onclick="prevPage()">⬅</button>
-<button onclick="nextPage()">➡</button>
-
-</div>
-</section>
-
-<!-- LOCATION -->
-<section class="page location-page">
-  <div class="card">
-    <h1>Location 📍</h1>
-    <p>Bhubaneswar, Odisha</p>
-
-    <button onclick="prevPage()">⬅</button>
-    <button onclick="nextPage()">➡</button>
-  </div>
-</section>
-
-<!-- FAMILY -->
-<section class="page">
-  <div class="card">
-
-    <h1>Our Families ❤️</h1>
-
-    <h3>Bride Family</h3>
-    <p>Somendra Das & Aliva Das</p>
-    <p>Swapnika Das Babar</p>
-    <p>Chirayu Das Babar</p>
-    <p>Kuchuuu</p>
-
-    <h3>Groom Family</h3>
-    <p>Anant Kumar & Anju Kumari</p>
-    <p>Ayush Kumar</p>
-
-    <button onclick="prevPage()">⬅</button>
-    <button onclick="nextPage()">➡</button>
-
-  </div>
-</section>
-
-<!-- RSVP -->
-<section class="page rsvp-page">
-  <div class="card">
-
-    <h1>Confirm Presence 💌</h1>
-
-    <input id="name" placeholder="Your Name">
-    <input id="guests" placeholder="Guests">
-
-    <select id="status">
-      <option>Will Attend</option>
-      <option>Will Not Attend</option>
-    </select>
-
-    <button onclick="submitRSVP()">Submit</button>
-
-    <button onclick="prevPage()">⬅</button>
-    <button onclick="nextPage()">Admin ➡</button>
-
-  </div>
-</section>
-
-<!-- ADMIN -->
-<section class="page">
-  <div class="card">
-
-    <div id="loginBox">
-      <h2>Admin 🔐</h2>
-      <input id="pin" placeholder="PIN">
-      <button onclick="checkAdmin()">Login</button>
+    <div class="top-timer">
+      <span id="days"></span>d :
+      <span id="hours"></span>h :
+      <span id="minutes"></span>m :
+      <span id="seconds"></span>s
     </div>
 
-    <div id="adminPanel" style="display:none;">
-      <h2>Guest List</h2>
-      <div id="guestList"></div>
+    <div class="card">
+      <h1>Wedding Celebrations</h1>
+
+      <img src="events.png" class="event-img" alt="Events">
+
+      <br>
+
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Next ➡</button>
     </div>
+  </section>
 
-    <button onclick="prevPage()">⬅</button>
+  <!-- PAGE 3 (LOCATION) -->
+  <section class="page location-page">
+    <div class="card">
+      <h1>Location 📍</h1>
 
-  </div>
-</section>
+      <p>
+        Bhubaneswar<br>
+        Odisha, India
+      </p>
+
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Next ➡</button>
+    </div>
+  </section>
+
+  <!-- PAGE 4 (FAMILY) -->
+  <section class="page">
+    <div class="card">
+
+      <h1>Our Families ❤️</h1>
+
+      <h3>Bride Family</h3>
+      <p>Somendra Das & Aliva Das</p>
+      <p>Swapnika Das Babar</p>
+      <p>Chirayu Das Babar</p>
+      <p>Kuchuuu</p>
+
+      <h3>Groom Family</h3>
+      <p>Anant Kumar & Anju Kumari</p>
+      <p>Ayush Kumar</p>
+
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Next ➡</button>
+
+    </div>
+  </section>
+
+  <!-- PAGE 5 (RSVP) -->
+  <section class="page rsvp-page">
+    <div class="card">
+
+      <h1>Confirm Your Presence 💌</h1>
+
+      <input id="name" placeholder="Your Name">
+      <input id="guests" placeholder="Number of Guests">
+
+      <select id="status">
+        <option>Will Attend</option>
+        <option>Will Not Attend</option>
+      </select>
+
+      <button onclick="submitRSVP()">Submit</button>
+
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Admin ➡</button>
+
+    </div>
+  </section>
+
+  <!-- PAGE 6 (ADMIN) -->
+  <section class="page">
+    <div class="card">
+
+      <div id="loginBox">
+        <h2>Admin Login 🔐</h2>
+        <input id="pin" placeholder="Enter PIN">
+        <button onclick="checkAdmin()">Login</button>
+      </div>
+
+      <div id="adminPanel" style="display:none;">
+        <h2>Guest List 📊</h2>
+        <div id="guestList"></div>
+      </div>
+
+      <button onclick="prevPage()">⬅ Back</button>
+
+    </div>
+  </section>
 
 </div>
 
