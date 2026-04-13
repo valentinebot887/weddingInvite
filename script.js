@@ -8,11 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   showPage(0);
 });
 
+/* SHOW PAGE */
 function showPage(index) {
   pages.forEach(p => p.classList.remove("active"));
   pages[index].classList.add("active");
 }
 
+/* NEXT */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     currentPage++;
@@ -20,6 +22,7 @@ function nextPage() {
   }
 }
 
+/* PREV */
 function prevPage() {
   if (currentPage > 0) {
     currentPage--;
@@ -27,6 +30,7 @@ function prevPage() {
   }
 }
 
+/* RSVP */
 function submitRSVP() {
   let name = document.getElementById("name").value;
 
@@ -47,6 +51,7 @@ function submitRSVP() {
   alert("Submitted ✅");
 }
 
+/* ADMIN */
 function checkAdmin() {
   let pin = document.getElementById("pin").value;
 
