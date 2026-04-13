@@ -10,7 +10,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle, #3b0a0a, #000);
+  background: radial-gradient(circle, #1a001a, #000);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,22 +18,35 @@ body {
 }
 
 .envelope-body {
-  width: 320px;
-  height: 200px;
-  background: #8b0000;
+  width: 340px;
+  height: 220px;
+  background: linear-gradient(135deg, #f5deb3, #e6c200);
   border-radius: 10px;
   position: relative;
   cursor: pointer;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
 .flap {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #a52a2a;
-  clip-path: polygon(0 0, 100% 0, 50% 60%);
+  background: linear-gradient(135deg, #e6c200, #c9a000);
+  clip-path: polygon(0 0, 100% 0, 50% 65%);
   transform-origin: top;
   transition: 1s;
+}
+
+.seal {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: crimson;
+  border-radius: 50%;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 
 .letter {
@@ -43,11 +56,12 @@ body {
   background: #fff8dc;
   color: black;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   transform: translateY(100%);
   transition: 1s;
+  text-align: center;
 }
 
 .envelope-open .flap {
@@ -72,10 +86,10 @@ body {
 
 /* BACKGROUNDS */
 .location-page {
-  background: url("location.png") center/cover no-repeat;
+  background: url("./location.png") center/cover no-repeat;
 }
 .rsvp-page {
-  background: url("invite.png") center/cover no-repeat;
+  background: url("./invite.png") center/cover no-repeat;
 }
 
 /* CARD */
@@ -112,4 +126,11 @@ button {
   padding: 5px;
   border-radius: 10px;
   color: gold;
+}
+
+/* INPUT */
+input, select {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
 }
