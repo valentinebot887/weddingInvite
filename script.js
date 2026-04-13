@@ -12,7 +12,7 @@ envelope.addEventListener("click", () => {
   setTimeout(() => {
     envelope.style.display = "none";
     document.getElementById("mainContent").style.display = "block";
-  }, 1000);
+  }, 1200);
 });
 
 /* NAV */
