@@ -22,7 +22,7 @@ function nextPage() {
   }
 }
 
-/* PREV */
+/* PREVIOUS */
 function prevPage() {
   if (currentPage > 0) {
     currentPage--;
