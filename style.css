@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  overflow: hidden;
+  font-family: Arial;
   color: white;
+  overflow: hidden;
 }
 
 /* ENVELOPE */
@@ -10,21 +10,20 @@ body {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: radial-gradient(circle, #1a001a, #000);
+  background: radial-gradient(circle, #140014, #000);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .envelope-body {
-  width: 420px;
-  height: 260px;
+  width: 400px;
+  height: 240px;
   background: linear-gradient(145deg, #fff8dc, #f5deb3);
   border: 2px solid gold;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
 /* FLAP */
@@ -43,7 +42,6 @@ body {
   top: 90px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 30px;
 }
 
 /* LETTER */
@@ -70,15 +68,20 @@ body {
 }
 
 /* MAIN */
-#mainContent { display: none; }
+#mainContent {
+  display: none;
+}
 
+/* PAGE */
 .page {
   display: none;
   height: 100vh;
   justify-content: center;
   align-items: center;
 }
-.page.active { display: flex; }
+.page.active {
+  display: flex;
+}
 
 /* CARD */
 .card {
@@ -86,6 +89,13 @@ body {
   padding: 25px;
   border-radius: 15px;
   text-align: center;
+}
+
+/* IMAGES */
+.event-img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
 }
 
 /* BACKGROUND */
@@ -111,4 +121,10 @@ button {
   background: gold;
   border: none;
   border-radius: 20px;
+}
+
+/* INPUT */
+input, select {
+  display: block;
+  margin: 10px auto;
 }
