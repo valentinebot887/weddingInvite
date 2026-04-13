@@ -1,10 +1,14 @@
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzk73ZML3j_k-kaJ_omZooIqObQXgqSi4XhTQh2_1mt42h4H9GLIVevw_3jwa401PD7yw/exec";
 
 let currentPage = 0;
-const pages = document.querySelectorAll(".page");
+let pages = [];
 
-/* 💌 ENVELOPE */
+/* ✅ WAIT FOR DOM */
 document.addEventListener("DOMContentLoaded", () => {
+
+  pages = document.querySelectorAll(".page");
+
+  /* 💌 ENVELOPE */
   const envelope = document.querySelector(".envelope-body");
 
   if (envelope) {
@@ -17,10 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1200);
     });
   }
+
 });
 
-/* ✅ NAVIGATION FIXED */
+/* ✅ SAFE NAVIGATION */
 function nextPage() {
+  if (!pages.length) return;
+
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
     currentPage++;
@@ -29,6 +36,8 @@ function nextPage() {
 }
 
 function prevPage() {
+  if (!pages.length) return;
+
   if (currentPage > 0) {
     pages[currentPage].classList.remove("active");
     currentPage--;
@@ -36,39 +45,46 @@ function prevPage() {
   }
 }
 
-/* ✅ RSVP WORKING */
+/* ✅ RSVP FIXED */
 function submitRSVP() {
-  let name = document.getElementById("name").value.trim();
-  let guests = document.getElementById("guests").value || "1";
-  let status = document.getElementById("status").value;
+  try {
+    let name = document.getElementById("name").value.trim();
+    let guests = document.getElementById("guests").value || "1";
+    let status = document.getElementById("status").value;
 
-  if (!name) {
-    alert("Please enter your name");
-    return;
+    if (!name) {
+      alert("Enter your name");
+      return;
+    }
+
+    let formData = new FormData();
+    formData.append("name", name);
+    formData.append("guests", guests);
+    formData.append("status", status);
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: formData
+    });
+
+    alert("✅ Submitted!");
+
+    document.getElementById("name").value = "";
+    document.getElementById("guests").value = "";
+
+  } catch (err) {
+    alert("❌ Error submitting");
   }
-
-  let formData = new FormData();
-  formData.append("name", name);
-  formData.append("guests", guests);
-  formData.append("status", status);
-
-  fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    body: formData
-  });
-
-  alert("✅ Submitted successfully!");
-
-  document.getElementById("name").value = "";
-  document.getElementById("guests").value = "";
 }
 
 /* 🔐 ADMIN */
 const PIN = "06122026";
 
 function checkAdmin() {
-  if (document.getElementById("pin").value === PIN) {
+  let pin = document.getElementById("pin").value;
+
+  if (pin === PIN) {
     document.getElementById("loginBox").style.display = "none";
     document.getElementById("adminPanel").style.display = "block";
     loadGuests();
@@ -82,6 +98,7 @@ function loadGuests() {
   fetch(SCRIPT_URL)
     .then(res => res.json())
     .then(data => {
+
       let html = "";
 
       for (let i = 1; i < data.length; i++) {
@@ -89,17 +106,18 @@ function loadGuests() {
       }
 
       document.getElementById("guestList").innerHTML = html;
+
     })
     .catch(() => {
-      document.getElementById("guestList").innerHTML = "⚠️ Unable to load data";
+      document.getElementById("guestList").innerHTML = "⚠️ Unable to load";
     });
 }
 
-/* ✅ TIMER FIX (NO CRASH) */
+/* ✅ TIMER SAFE */
 setInterval(() => {
+
   let daysEl = document.getElementById("days");
 
-  // ONLY run if timer exists
   if (!daysEl) return;
 
   let diff = new Date("Dec 6, 2026") - new Date();
