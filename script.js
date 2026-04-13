@@ -4,16 +4,14 @@ let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
 /* ENVELOPE */
-const envelope = document.getElementById("envelope");
-
-envelope.addEventListener("click", () => {
-  envelope.querySelector(".envelope-body").classList.add("envelope-open");
+document.querySelector(".envelope-body").onclick = () => {
+  document.querySelector(".envelope-body").classList.add("envelope-open");
 
   setTimeout(() => {
-    envelope.style.display = "none";
+    document.getElementById("envelope").style.display = "none";
     document.getElementById("mainContent").style.display = "block";
   }, 1200);
-});
+};
 
 /* NAV */
 function nextPage() {
@@ -21,23 +19,38 @@ function nextPage() {
   currentPage++;
   pages[currentPage].classList.add("active");
 }
-
 function prevPage() {
   pages[currentPage].classList.remove("active");
   currentPage--;
   pages[currentPage].classList.add("active");
 }
 
-/* RSVP */
+/* ✅ RSVP FINAL FIX */
 function submitRSVP() {
-  let formData = new FormData();
-  formData.append("name", document.getElementById("name").value);
-  formData.append("guests", document.getElementById("guests").value);
-  formData.append("status", document.getElementById("status").value);
+  let name = document.getElementById("name").value.trim();
+  let guests = document.getElementById("guests").value || "1";
+  let status = document.getElementById("status").value;
 
-  fetch(SCRIPT_URL, { method: "POST", body: formData })
-  .then(() => alert("✅ Submitted"))
-  .catch(() => alert("❌ Failed"));
+  if (!name) {
+    alert("Enter your name");
+    return;
+  }
+
+  let formData = new FormData();
+  formData.append("name", name);
+  formData.append("guests", guests);
+  formData.append("status", status);
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+  });
+
+  alert("✅ Submitted successfully!");
+
+  document.getElementById("name").value = "";
+  document.getElementById("guests").value = "";
 }
 
 /* ADMIN */
