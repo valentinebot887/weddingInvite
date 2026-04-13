@@ -3,23 +3,17 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzk73ZML3j_k-kaJ_omZ
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
-/* 💌 ENVELOPE OPEN */
-document.addEventListener("DOMContentLoaded", () => {
-  const envelope = document.querySelector(".envelope-body");
+/* ENVELOPE */
+document.querySelector(".envelope-body").onclick = () => {
+  document.querySelector(".envelope-body").classList.add("envelope-open");
 
-  if (envelope) {
-    envelope.addEventListener("click", () => {
-      envelope.classList.add("envelope-open");
+  setTimeout(() => {
+    document.getElementById("envelope").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+  }, 1200);
+};
 
-      setTimeout(() => {
-        document.getElementById("envelope").style.display = "none";
-        document.getElementById("mainContent").style.display = "block";
-      }, 1200);
-    });
-  }
-});
-
-/* 📄 NAVIGATION */
+/* FIXED NAVIGATION */
 function nextPage() {
   if (currentPage < pages.length - 1) {
     pages[currentPage].classList.remove("active");
@@ -36,21 +30,12 @@ function prevPage() {
   }
 }
 
-/* ✅ RSVP (FINAL WORKING VERSION) */
+/* RSVP */
 function submitRSVP() {
-  let name = document.getElementById("name").value.trim();
-  let guests = document.getElementById("guests").value || "1";
-  let status = document.getElementById("status").value;
-
-  if (!name) {
-    alert("Please enter your name");
-    return;
-  }
-
   let formData = new FormData();
-  formData.append("name", name);
-  formData.append("guests", guests);
-  formData.append("status", status);
+  formData.append("name", document.getElementById("name").value);
+  formData.append("guests", document.getElementById("guests").value);
+  formData.append("status", document.getElementById("status").value);
 
   fetch(SCRIPT_URL, {
     method: "POST",
@@ -58,66 +43,25 @@ function submitRSVP() {
     body: formData
   });
 
-  // Instant success (no waiting for response due to no-cors)
-  alert("✅ Thank you! Your response has been recorded.");
-
-  // Clear inputs
-  document.getElementById("name").value = "";
-  document.getElementById("guests").value = "";
+  alert("✅ Submitted!");
 }
 
-/* 🔐 ADMIN LOGIN */
+/* ADMIN */
 const PIN = "06122026";
 
 function checkAdmin() {
-  let enteredPin = document.getElementById("pin").value;
-
-  if (enteredPin === PIN) {
+  if (document.getElementById("pin").value === PIN) {
     document.getElementById("loginBox").style.display = "none";
     document.getElementById("adminPanel").style.display = "block";
-    loadGuests();
-  } else {
-    alert("❌ Wrong PIN");
-  }
+  } else alert("Wrong PIN");
 }
 
-/* 📊 LOAD GUEST DATA */
-function loadGuests() {
-  fetch(SCRIPT_URL)
-    .then(res => res.json())
-    .then(data => {
-      let html = "";
-
-      // Skip header row (index 0)
-      for (let i = 1; i < data.length; i++) {
-        html += `<p>👤 ${data[i][0]} (${data[i][1]}) - ${data[i][2]}</p>`;
-      }
-
-      document.getElementById("guestList").innerHTML = html;
-    })
-    .catch(() => {
-      document.getElementById("guestList").innerHTML = "⚠️ Unable to load data";
-    });
-}
-
-/* ⏳ WEDDING TIMER */
-const weddingDate = new Date("Dec 6, 2026 00:00:00").getTime();
-
+/* TIMER */
 setInterval(() => {
-  let now = new Date().getTime();
-  let diff = weddingDate - now;
+  let diff = new Date("Dec 6, 2026") - new Date();
 
-  if (diff < 0) return;
-
-  let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  let minutes = Math.floor((diff / (1000 * 60)) % 60);
-  let seconds = Math.floor((diff / 1000) % 60);
-
-  if (document.getElementById("days")) {
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-    document.getElementById("seconds").innerText = seconds;
-  }
+  document.getElementById("days").innerText = Math.floor(diff/86400000);
+  document.getElementById("hours").innerText = Math.floor(diff/3600000 % 24);
+  document.getElementById("minutes").innerText = Math.floor(diff/60000 % 60);
+  document.getElementById("seconds").innerText = Math.floor(diff/1000 % 60);
 }, 1000);
