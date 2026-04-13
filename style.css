@@ -1,21 +1,39 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover;
-  height: 100vh;
+  font-family: Arial, sans-serif;
   color: white;
 }
 
-/* PAGE */
+/* MAIN BACKGROUND */
+body {
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* MAIN CONTENT */
+#mainContent {
+  width: 100%;
+  height: 100vh;
+}
+
+/* PAGE FIX */
 .page {
   display: none;
+  width: 100%;
   height: 100vh;
+
+  display: flex;
   justify-content: center;
   align-items: center;
+
+  position: absolute; /* 🔥 IMPORTANT FIX */
+  top: 0;
+  left: 0;
 }
 
 .page.active {
   display: flex;
+  z-index: 1;
 }
 
 /* CARD */
@@ -24,23 +42,42 @@ body {
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  max-width: 350px;
+  max-width: 400px;
+  width: 90%;
 }
 
-/* FIX BUTTON CLICK */
+/* BUTTON FIX */
 button {
-  padding: 10px 20px;
-  margin: 10px;
+  padding: 12px 25px;
+  margin-top: 15px;
   background: gold;
   border: none;
-  border-radius: 20px;
+  border-radius: 25px;
   cursor: pointer;
-  z-index: 10; /* IMPORTANT */
+  font-weight: bold;
+
   position: relative;
+  z-index: 10; /* 🔥 FIX CLICK ISSUE */
 }
 
 /* IMAGE */
 .img {
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
+  margin: 15px 0;
+}
+
+/* INPUT */
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
 }
