@@ -5,7 +5,7 @@ body {
   color: white;
 }
 
-/* PAGE SYSTEM (FIXED) */
+/* PAGE SYSTEM */
 .page {
   display: none;
   min-height: 100vh;
@@ -29,11 +29,17 @@ body {
   max-width: 400px;
 }
 
-/* IMAGE */
-.img {
+/* LARGE CARD FOR IMAGE PAGE */
+.large-card {
+  max-width: 750px;
+}
+
+/* EVENT IMAGE */
+.event-img {
   width: 100%;
-  max-width: 300px;
-  margin: 15px 0;
+  max-width: 700px;
+  border-radius: 12px;
+  margin: 20px 0;
 }
 
 /* BUTTON */
@@ -47,7 +53,7 @@ button {
 }
 
 /* INPUT */
-input {
+input, select {
   display: block;
   margin: 10px auto;
   padding: 10px;
