@@ -1,46 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sameekshya ❤️ Ankur</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameekshya ❤️ Ankur</title>
 
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
 
 <div id="app">
 
+  <!-- PAGE 1 -->
   <div class="page active">
     <div class="card">
       <h1>Welcome 💌</h1>
-      <p>Sameekshya & Ankur invite you 💖</p>
+      <p>
+        Together with their families,<br><br>
+        Sameekshya & Ankur invite you<br>
+        to celebrate their wedding 💖
+      </p>
       <button onclick="nextPage()">Continue</button>
     </div>
   </div>
 
+  <!-- PAGE 2 -->
   <div class="page">
     <div class="card large-card">
       <h1>Wedding Celebrations</h1>
+
       <img src="events.png" class="event-img">
-      <button onclick="prevPage()">⬅</button>
-      <button onclick="nextPage()">➡</button>
+
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Next ➡</button>
     </div>
   </div>
 
+  <!-- PAGE 3 -->
   <div class="page">
     <div class="card">
       <h1>Location 📍</h1>
-      <p>Bhubaneswar</p>
-      <button onclick="prevPage()">⬅</button>
-      <button onclick="nextPage()">➡</button>
+      <p>Bhubaneswar, Odisha</p>
+
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Next ➡</button>
     </div>
   </div>
 
+  <!-- PAGE 4 -->
   <div class="page">
     <div class="card">
+
       <h1>Families ❤️</h1>
 
       <h3>Bride Family</h3>
@@ -53,11 +65,12 @@
       <p>Anant Kumar & Anju Kumari</p>
       <p>Ayush Kumar</p>
 
-      <button onclick="prevPage()">⬅</button>
-      <button onclick="nextPage()">➡</button>
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Next ➡</button>
     </div>
   </div>
 
+  <!-- PAGE 5 -->
   <div class="page">
     <div class="card">
       <h1>RSVP 💌</h1>
@@ -65,19 +78,27 @@
       <input id="name" placeholder="Your Name">
       <input id="guests" placeholder="Guests">
 
+      <select id="status">
+        <option>Will Attend</option>
+        <option>Will Not Attend</option>
+      </select>
+
       <button onclick="submitRSVP()">Submit</button>
 
-      <button onclick="prevPage()">⬅</button>
-      <button onclick="nextPage()">➡</button>
+      <button onclick="prevPage()">⬅ Back</button>
+      <button onclick="nextPage()">Next ➡</button>
     </div>
   </div>
 
+  <!-- PAGE 6 -->
   <div class="page">
     <div class="card">
       <h1>Admin 🔐</h1>
-      <input id="pin">
+
+      <input id="pin" placeholder="Enter PIN">
       <button onclick="checkAdmin()">Login</button>
-      <button onclick="prevPage()">⬅</button>
+
+      <button onclick="prevPage()">⬅ Back</button>
     </div>
   </div>
 
