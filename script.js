@@ -1,40 +1,38 @@
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzk73ZML3j_k-kaJ_omZooIqObQXgqSi4XhTQh2_1mt42h4H9GLIVevw_3jwa401PD7yw/exec";
 
 let currentPage = 0;
-let pages = [];
+let pages;
 
 document.addEventListener("DOMContentLoaded", () => {
 
   pages = document.querySelectorAll(".page");
 
-  const envelope = document.querySelector(".envelope-body");
-
-  envelope.addEventListener("click", () => {
-    envelope.classList.add("envelope-open");
+  document.querySelector(".envelope-body").onclick = () => {
+    document.querySelector(".envelope-body").classList.add("envelope-open");
 
     setTimeout(() => {
       document.getElementById("envelope").style.display = "none";
       document.getElementById("mainContent").style.display = "block";
-    }, 1200);
-  });
+    }, 1000);
+  };
 
 });
 
 /* NAVIGATION */
 function nextPage() {
-  if (currentPage >= pages.length - 1) return;
-
-  pages[currentPage].classList.remove("active");
-  currentPage++;
-  pages[currentPage].classList.add("active");
+  if (currentPage < pages.length - 1) {
+    pages[currentPage].classList.remove("active");
+    currentPage++;
+    pages[currentPage].classList.add("active");
+  }
 }
 
 function prevPage() {
-  if (currentPage <= 0) return;
-
-  pages[currentPage].classList.remove("active");
-  currentPage--;
-  pages[currentPage].classList.add("active");
+  if (currentPage > 0) {
+    pages[currentPage].classList.remove("active");
+    currentPage--;
+    pages[currentPage].classList.add("active");
+  }
 }
 
 /* RSVP */
@@ -51,4 +49,14 @@ function submitRSVP() {
   });
 
   alert("✅ Submitted!");
+}
+
+/* ADMIN */
+function checkAdmin() {
+  if (document.getElementById("pin").value === "06122026") {
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+  } else {
+    alert("Wrong PIN");
+  }
 }
