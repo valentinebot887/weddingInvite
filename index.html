@@ -11,19 +11,6 @@
 
 <body>
 
-<!-- ENVELOPE -->
-<div id="envelope">
-  <div class="envelope-body">
-    <div class="flap"></div>
-    <div class="seal">💍</div>
-
-    <div class="letter">
-      <h1>Sameekshya ❤️ Ankur</h1>
-      <p>Tap to Open Invitation</p>
-    </div>
-  </div>
-</div>
-
 <div id="mainContent">
 
 <!-- PAGE 1 -->
@@ -35,102 +22,60 @@
       Sameekshya & Ankur invite you<br>
       to celebrate their wedding 💖
     </p>
+
     <button onclick="nextPage()">Continue</button>
   </div>
 </section>
 
 <!-- PAGE 2 -->
 <section class="page">
+  <div class="card">
+    <h1>Wedding Celebrations</h1>
+    <img src="events.png" class="img">
 
-<div class="top-timer">
-<span id="days"></span>d :
-<span id="hours"></span>h :
-<span id="minutes"></span>m :
-<span id="seconds"></span>s
-</div>
-
-<div class="card">
-<h1>Wedding Celebrations</h1>
-
-<img src="events.png" class="event-img">
-
-<button onclick="prevPage()">⬅</button>
-<button onclick="nextPage()">➡</button>
-</div>
+    <button onclick="prevPage()">⬅</button>
+    <button onclick="nextPage()">➡</button>
+  </div>
 </section>
 
-<!-- LOCATION -->
-<section class="page location-page">
+<!-- PAGE 3 -->
+<section class="page">
   <div class="card">
     <h1>Location 📍</h1>
-    <p>Bhubaneswar, Odisha</p>
+    <p>Bhubaneswar</p>
 
     <button onclick="prevPage()">⬅</button>
     <button onclick="nextPage()">➡</button>
   </div>
 </section>
 
-<!-- FAMILY -->
-<section class="page family-page">
+<!-- PAGE 4 -->
+<section class="page">
   <div class="card">
+    <h1>Families ❤️</h1>
 
-    <h1>Our Families ❤️</h1>
-
-    <h3>Bride Family</h3>
-    <p>Somendra Das & Aliva Das</p>
+    <p><b>Bride:</b> Somendra Das & Aliva Das</p>
     <p>Swapnika Das Babar</p>
     <p>Chirayu Das Babar</p>
-    <p>Kuchuuu</p>
 
-    <h3>Groom Family</h3>
-    <p>Anant Kumar & Anju Kumari</p>
-    <p>Ayush Kumar</p>
+    <p><b>Groom:</b> Anant Kumar & Anju Kumari</p>
 
     <button onclick="prevPage()">⬅</button>
     <button onclick="nextPage()">➡</button>
-
   </div>
 </section>
 
-<!-- RSVP -->
-<section class="page rsvp-page">
+<!-- PAGE 5 -->
+<section class="page">
   <div class="card">
-
-    <h1>Confirm Presence 💌</h1>
+    <h1>RSVP 💌</h1>
 
     <input id="name" placeholder="Your Name">
     <input id="guests" placeholder="Guests">
 
-    <select id="status">
-      <option>Will Attend</option>
-      <option>Will Not Attend</option>
-    </select>
-
     <button onclick="submitRSVP()">Submit</button>
 
     <button onclick="prevPage()">⬅</button>
-    <button onclick="nextPage()">➡</button>
-
-  </div>
-</section>
-
-<!-- ADMIN -->
-<section class="page admin-page">
-  <div class="card">
-
-    <div id="loginBox">
-      <h2>Admin 🔐</h2>
-      <input id="pin" placeholder="PIN">
-      <button onclick="checkAdmin()">Login</button>
-    </div>
-
-    <div id="adminPanel" style="display:none;">
-      <h2>Guest List</h2>
-      <div id="guestList"></div>
-    </div>
-
-    <button onclick="prevPage()">⬅</button>
-
   </div>
 </section>
 
