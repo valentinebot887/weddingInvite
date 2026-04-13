@@ -3,12 +3,10 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzk73ZML3j_k-kaJ_omZ
 let currentPage = 0;
 let pages = [];
 
-/* INIT AFTER DOM */
 document.addEventListener("DOMContentLoaded", () => {
 
   pages = document.querySelectorAll(".page");
 
-  /* ENVELOPE */
   const envelope = document.querySelector(".envelope-body");
 
   envelope.addEventListener("click", () => {
@@ -41,19 +39,10 @@ function prevPage() {
 
 /* RSVP */
 function submitRSVP() {
-  let name = document.getElementById("name").value.trim();
-  let guests = document.getElementById("guests").value || "1";
-  let status = document.getElementById("status").value;
-
-  if (!name) {
-    alert("Enter your name");
-    return;
-  }
-
   let formData = new FormData();
-  formData.append("name", name);
-  formData.append("guests", guests);
-  formData.append("status", status);
+  formData.append("name", document.getElementById("name").value);
+  formData.append("guests", document.getElementById("guests").value);
+  formData.append("status", document.getElementById("status").value);
 
   fetch(SCRIPT_URL, {
     method: "POST",
@@ -63,27 +52,3 @@ function submitRSVP() {
 
   alert("✅ Submitted!");
 }
-
-/* ADMIN */
-const PIN = "06122026";
-
-function checkAdmin() {
-  if (document.getElementById("pin").value === PIN) {
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("adminPanel").style.display = "block";
-  } else {
-    alert("Wrong PIN");
-  }
-}
-
-/* SAFE TIMER */
-setInterval(() => {
-  if (!document.getElementById("days")) return;
-
-  let diff = new Date("Dec 6, 2026") - new Date();
-
-  document.getElementById("days").innerText = Math.floor(diff/86400000);
-  document.getElementById("hours").innerText = Math.floor(diff/3600000 % 24);
-  document.getElementById("minutes").innerText = Math.floor(diff/60000 % 60);
-  document.getElementById("seconds").innerText = Math.floor(diff/1000 % 60);
-}, 1000);
