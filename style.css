@@ -1,70 +1,63 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover no-repeat fixed;
   color: white;
 }
 
-/* MAIN BACKGROUND */
-body {
-  background: url("https://images.unsplash.com/photo-1519741497674-611481863552") no-repeat center center fixed;
-  background-size: cover;
-}
-
-/* MAIN CONTENT */
-#mainContent {
-  width: 100%;
+/* APP CONTAINER */
+#app {
+  position: relative;
   height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* PAGE FIX */
+/* PAGE FIX (IMPORTANT) */
 .page {
-  display: none;
+  position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
-
-  position: absolute; /* 🔥 IMPORTANT FIX */
-  top: 0;
-  left: 0;
 }
 
 .page.active {
   display: flex;
-  z-index: 1;
 }
 
 /* CARD */
 .card {
-  background: rgba(0,0,0,0.7);
-  padding: 30px;
+  background: rgba(0,0,0,0.75);
+  padding: 25px;
   border-radius: 15px;
   text-align: center;
-  max-width: 400px;
   width: 90%;
-}
-
-/* BUTTON FIX */
-button {
-  padding: 12px 25px;
-  margin-top: 15px;
-  background: gold;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-
-  position: relative;
-  z-index: 10; /* 🔥 FIX CLICK ISSUE */
+  max-width: 400px;
 }
 
 /* IMAGE */
 .img {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   margin: 15px 0;
+}
+
+/* BUTTON GROUP */
+.btns {
+  margin-top: 10px;
+}
+
+/* BUTTON */
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background: gold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 /* INPUT */
@@ -73,11 +66,4 @@ input {
   margin: 10px auto;
   padding: 10px;
   width: 80%;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .card {
-    padding: 20px;
-  }
 }
