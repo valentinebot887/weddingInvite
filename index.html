@@ -1,111 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sameekshya ❤️ Ankur</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sameekshya ❤️ Ankur</title>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 
 <body>
 
-<div id="mainContent">
+<div id="app">
 
   <!-- PAGE 1 -->
-  <section class="page active">
+  <div class="page active">
     <div class="card">
       <h1>Welcome 💌</h1>
-
       <p>
         Together with their families,<br><br>
         Sameekshya & Ankur invite you<br>
         to celebrate their wedding 💖
       </p>
-
       <button onclick="nextPage()">Continue</button>
     </div>
-  </section>
+  </div>
 
   <!-- PAGE 2 -->
-  <section class="page">
+  <div class="page">
     <div class="card">
       <h1>Wedding Celebrations</h1>
+      <img src="events.png" class="img">
 
-      <img src="events.png" class="img" alt="Wedding Events">
-
-      <button onclick="prevPage()">⬅ Back</button>
-      <button onclick="nextPage()">Next ➡</button>
+      <div class="btns">
+        <button onclick="prevPage()">⬅ Back</button>
+        <button onclick="nextPage()">Next ➡</button>
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- PAGE 3 -->
-  <section class="page">
+  <div class="page">
     <div class="card">
       <h1>Location 📍</h1>
+      <p>Bhubaneswar, Odisha</p>
 
-      <p>
-        Bhubaneswar<br>
-        Odisha, India
-      </p>
-
-      <button onclick="prevPage()">⬅ Back</button>
-      <button onclick="nextPage()">Next ➡</button>
+      <div class="btns">
+        <button onclick="prevPage()">⬅ Back</button>
+        <button onclick="nextPage()">Next ➡</button>
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- PAGE 4 -->
-  <section class="page">
+  <div class="page">
     <div class="card">
-      <h1>Our Families ❤️</h1>
+      <h1>Families ❤️</h1>
 
       <h3>Bride Family</h3>
       <p>Somendra Das & Aliva Das</p>
       <p>Swapnika Das Babar</p>
       <p>Chirayu Das Babar</p>
-      <p>Kuchuuu</p>
 
       <h3>Groom Family</h3>
       <p>Anant Kumar & Anju Kumari</p>
-      <p>Ayush Kumar</p>
 
-      <button onclick="prevPage()">⬅ Back</button>
-      <button onclick="nextPage()">Next ➡</button>
+      <div class="btns">
+        <button onclick="prevPage()">⬅ Back</button>
+        <button onclick="nextPage()">Next ➡</button>
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- PAGE 5 -->
-  <section class="page">
+  <div class="page">
     <div class="card">
-      <h1>Confirm Your Presence 💌</h1>
+      <h1>RSVP 💌</h1>
 
       <input id="name" placeholder="Your Name">
-      <input id="guests" placeholder="Number of Guests">
-
-      <select id="status">
-        <option>Will Attend</option>
-        <option>Will Not Attend</option>
-      </select>
+      <input id="guests" placeholder="Guests">
 
       <button onclick="submitRSVP()">Submit</button>
 
-      <button onclick="prevPage()">⬅ Back</button>
-      <button onclick="nextPage()">Admin ➡</button>
+      <div class="btns">
+        <button onclick="prevPage()">⬅ Back</button>
+        <button onclick="nextPage()">Next ➡</button>
+      </div>
     </div>
-  </section>
+  </div>
 
   <!-- PAGE 6 -->
-  <section class="page">
+  <div class="page">
     <div class="card">
-      <h2>Admin Login 🔐</h2>
-
+      <h1>Admin 🔐</h1>
       <input id="pin" placeholder="Enter PIN">
       <button onclick="checkAdmin()">Login</button>
 
       <button onclick="prevPage()">⬅ Back</button>
     </div>
-  </section>
+  </div>
 
 </div>
 
