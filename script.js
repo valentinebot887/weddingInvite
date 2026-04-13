@@ -3,11 +3,19 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxxxlG-07faxRINSticO
 let currentPage = 0;
 const pages = document.querySelectorAll(".page");
 
-function enterSite() {
-  document.getElementById("intro").style.display = "none";
-  document.getElementById("mainContent").style.display = "block";
-}
+/* ENVELOPE */
+const envelope = document.getElementById("envelope");
 
+envelope.addEventListener("click", () => {
+  envelope.querySelector(".envelope-body").classList.add("envelope-open");
+
+  setTimeout(() => {
+    envelope.style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+  }, 1000);
+});
+
+/* NAV */
 function nextPage() {
   pages[currentPage].classList.remove("active");
   currentPage++;
@@ -20,6 +28,7 @@ function prevPage() {
   pages[currentPage].classList.add("active");
 }
 
+/* RSVP */
 function submitRSVP() {
   let formData = new FormData();
   formData.append("name", document.getElementById("name").value);
@@ -27,10 +36,11 @@ function submitRSVP() {
   formData.append("status", document.getElementById("status").value);
 
   fetch(SCRIPT_URL, { method: "POST", body: formData })
-  .then(() => alert("✅ Submitted Successfully"))
+  .then(() => alert("✅ Submitted"))
   .catch(() => alert("❌ Failed"));
 }
 
+/* ADMIN */
 const PIN = "06122026";
 
 function checkAdmin() {
@@ -38,9 +48,7 @@ function checkAdmin() {
     document.getElementById("loginBox").style.display = "none";
     document.getElementById("adminPanel").style.display = "block";
     loadGuests();
-  } else {
-    alert("Wrong PIN");
-  }
+  } else alert("Wrong PIN");
 }
 
 function loadGuests() {
