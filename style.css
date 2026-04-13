@@ -1,117 +1,46 @@
 body {
   margin: 0;
   font-family: Arial;
+  background: url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover;
+  height: 100vh;
   color: white;
 }
 
-/* ENVELOPE */
-#envelope {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: radial-gradient(circle, #140014, #000);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.envelope-body {
-  width: 400px;
-  height: 240px;
-  background: linear-gradient(145deg, #fff8dc, #f5deb3);
-  border: 2px solid gold;
-  position: relative;
-  cursor: pointer;
-}
-
-.flap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: gold;
-  clip-path: polygon(0 0, 100% 0, 50% 70%);
-  transition: 1s;
-}
-
-.seal {
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.letter {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: white;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transform: translateY(120%);
-  transition: 1s;
-}
-
-.envelope-open .flap { transform: rotateX(180deg); }
-.envelope-open .letter { transform: translateY(0); }
-
-/* MAIN */
-#mainContent { display: none; }
-
+/* PAGE */
 .page {
   display: none;
-  min-height: 100vh;
-  display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
-.page.active { display: flex; }
+.page.active {
+  display: flex;
+}
 
 /* CARD */
 .card {
-  background: rgba(0,0,0,0.75);
-  padding: 25px;
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
   border-radius: 15px;
   text-align: center;
-  max-width: 600px;
+  max-width: 350px;
 }
 
-/* IMAGES */
-.event-img {
-  width: 100%;
-  max-width: 500px;
-}
-
-/* BACKGROUNDS */
-.page:nth-child(1) {
-  background: url("https://images.unsplash.com/photo-1519741497674-611481863552") center/cover;
-}
-
-.location-page {
-  background: url("location.png") center/cover no-repeat;
-}
-
-.family-page {
-  background: url("https://images.unsplash.com/photo-1460364157752-926555421a7e") center/cover;
-}
-
-.rsvp-page {
-  background: url("invite.png") center/contain no-repeat;
-  background-color: black;
-}
-
-.admin-page {
-  background: url("https://images.unsplash.com/photo-1502685104226-ee32379fefbe") center/cover;
-}
-
-/* BUTTON */
+/* FIX BUTTON CLICK */
 button {
   padding: 10px 20px;
   margin: 10px;
   background: gold;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
+  z-index: 10; /* IMPORTANT */
+  position: relative;
+}
+
+/* IMAGE */
+.img {
+  width: 100%;
+  max-width: 300px;
 }
