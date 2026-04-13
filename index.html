@@ -14,22 +14,15 @@
 <div class="petals"></div>
 <div class="hearts"></div>
 
-<!-- INTRO -->
-<div id="intro">
-  <div class="center-box">
+<!-- 💌 ENVELOPE -->
+<div id="envelope">
+  <div class="envelope-body">
+    <div class="flap"></div>
 
-    <h1 class="title">Sameekshya ❤️ Ankur</h1>
-
-    <p class="subtitle">
-      Together with their families,<br>
-      request the honor of your presence<br>
-      at their wedding celebration 💍
-    </p>
-
-    <button class="enter-btn" onclick="enterSite()">
-      ✨ Open Invitation ✨
-    </button>
-
+    <div class="letter">
+      <h1>Sameekshya ❤️ Ankur</h1>
+      <p>Tap to Open Invitation</p>
+    </div>
   </div>
 </div>
 
@@ -38,17 +31,12 @@
 <!-- PAGE 1 -->
 <section class="page active">
   <div class="card">
-
     <h1>Welcome 💌</h1>
-
-    <p class="welcome-text">
+    <p>
       Sameekshya & Ankur<br>
       are getting married 💖<br><br>
-
-      We invite you to celebrate<br>
-      love, laughter and forever ✨
+      Join us to celebrate love & forever ✨
     </p>
-
     <button onclick="nextPage()">Continue</button>
   </div>
 </section>
@@ -64,53 +52,47 @@
 </div>
 
 <div class="card big-card">
-
 <h1>Wedding Celebrations</h1>
 
 <div class="event-full">
-  <img src="./events.png">
+  <img src="events.png">
 </div>
 
-<button onclick="prevPage()">⬅ Back</button>
-<button onclick="nextPage()">Next ➡</button>
-
+<button onclick="prevPage()">⬅</button>
+<button onclick="nextPage()">➡</button>
 </div>
 </section>
 
-<!-- LOCATION PAGE -->
+<!-- LOCATION -->
 <section class="page location-page">
   <div class="card">
-
     <h1>Location 📍</h1>
+    <p>Bhubaneswar<br>Odisha, India</p>
 
-    <p class="location-text">
-      Bhubaneswar<br>
-      Odisha, India
-    </p>
-
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Next ➡</button>
-
+    <button onclick="prevPage()">⬅</button>
+    <button onclick="nextPage()">➡</button>
   </div>
 </section>
 
-<!-- PAGE 4 -->
+<!-- FAMILY -->
 <section class="page">
   <div class="card">
+
     <h1>Our Families ❤️</h1>
 
-    <h3>Groom Family</h3>
+    <h3>Groom</h3>
     <p>Anant Kumar & Anju Kumari</p>
     <p>Ayush Kumar</p>
 
-    <h3>Bride Family</h3>
+    <h3>Bride</h3>
     <p>Somendra Das & Aliva Das</p>
     <p>Swapnika Das Babar</p>
-    <p><b>Chirayu Das Babar</b></p>
+    <p>Chirayu Das Babar</p>
     <p>Kuchuuu</p>
 
-    <button onclick="prevPage()">⬅ Back</button>
-    <button onclick="nextPage()">Next ➡</button>
+    <button onclick="prevPage()">⬅</button>
+    <button onclick="nextPage()">➡</button>
+
   </div>
 </section>
 
@@ -118,15 +100,10 @@
 <section class="page rsvp-page">
   <div class="card">
 
-    <h1>Confirm Your Presence 💌</h1>
-
-    <p class="welcome-text">
-      Your presence will make our day<br>
-      even more special ✨
-    </p>
+    <h1>Confirm Presence 💌</h1>
 
     <input id="name" placeholder="Your Name">
-    <input id="guests" placeholder="Number of Guests">
+    <input id="guests" placeholder="Guests">
 
     <select id="status">
       <option>Will Attend</option>
@@ -135,7 +112,7 @@
 
     <button onclick="submitRSVP()">Submit</button>
 
-    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="prevPage()">⬅</button>
     <button onclick="nextPage()">Admin ➡</button>
 
   </div>
@@ -146,17 +123,17 @@
   <div class="card">
 
     <div id="loginBox">
-      <h2>Admin Login 🔐</h2>
-      <input id="pin" placeholder="Enter PIN">
+      <h2>Admin 🔐</h2>
+      <input id="pin" placeholder="PIN">
       <button onclick="checkAdmin()">Login</button>
     </div>
 
     <div id="adminPanel" style="display:none;">
-      <h2>Guest List 📊</h2>
+      <h2>Guest List</h2>
       <div id="guestList"></div>
     </div>
 
-    <button onclick="prevPage()">⬅ Back</button>
+    <button onclick="prevPage()">⬅</button>
 
   </div>
 </section>
